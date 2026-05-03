@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>K-12 AI 自主学习 · Vibe Coding 全球产品线可行性研究报告 · East Coast Advisory</title>
+<style>
+/* ============================================================
+   Print / PDF setup
+   ============================================================ */
+@page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+@page :first { margin: 0; }
+
+/* ============================================================
+   Tokens (consulting-style palette)
+   ============================================================ */
+:root {
+  --navy:        #0B1E3F;
+  --navy-light:  #1F3A66;
+  --navy-soft:   #25497E;
+  --gold:        #B8862B;
+  --gold-light:  #E8C77A;
+  --gold-soft:   #F6ECCF;
+  --grey-900:    #1F1F1F;
+  --grey-700:    #3A3A3A;
+  --grey-500:    #6B6B6B;
+  --grey-300:    #C9C9C9;
+  --grey-200:    #E5E5E5;
+  --grey-100:    #F2F2F2;
+  --grey-50:     #FAFAFA;
+  --white:       #FFFFFF;
+  --us:          #1F3A66;
+  --cn:          #B8862B;
+}
+
+/* ============================================================
+   Base typography
+   ============================================================ */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Han Serif SC", "Noto Serif CJK SC",
+               "Songti SC", "STSong", "SimSun", "Microsoft YaHei", serif;
+  font-size: 10.5pt;
+  line-height: 1.75;
+  color: var(--grey-900);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Source Han Sans SC", "Noto Sans CJK SC",
+               "PingFang SC", "Microsoft YaHei", "SimHei", sans-serif;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.35;
+}
+p { margin: 0 0 8px 0; text-align: justify; }
+b, strong { color: var(--navy); font-weight: 700; }
+
+/* ============================================================
+   Page-level layout
+   ============================================================ */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 22mm 18mm 22mm 18mm;
+  margin: 0 auto 8mm auto;
+  background: var(--white);
+  page-break-after: always;
+  position: relative;
+  overflow: hidden;
+}
+.page:last-child { page-break-after: auto; }
+
+@media print {
+  body { background: white; }
+  .page { margin: 0; padding: 22mm 18mm; box-shadow: none; }
+}
+@media screen {
+  body { background: #DDD; padding: 16px 0; }
+  .page { box-shadow: 0 4px 18px rgba(0,0,0,0.18); }
+}
+
+/* ============================================================
+   Running header / footer
+   ============================================================ */
+.body-page { padding-top: 28mm; padding-bottom: 22mm; }
+.body-page::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0;
+  height: 14mm; background: var(--navy);
+}
+.body-page .header-bar {
+  position: absolute; top: 0; left: 0; right: 0; height: 14mm;
+  padding: 0 18mm; display: flex; justify-content: space-between;
+  align-items: center; color: var(--white);
+}
+.body-page .header-bar .h-left {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 9pt; font-weight: 700; letter-spacing: 0.5px;
+}
+.body-page .header-bar .h-right {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 8pt; color: var(--gold-light); letter-spacing: 1.5px;
+}
+.body-page::after {
+  content: ""; position: absolute; top: 14mm; left: 0; right: 0;
+  height: 1mm; background: var(--gold);
+}
+.body-page .footer-bar {
+  position: absolute; bottom: 10mm; left: 18mm; right: 18mm;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 8pt; color: var(--grey-500);
+  border-top: 0.5pt solid var(--grey-200); padding-top: 4mm;
+}
+
+/* ============================================================
+   Cover page
+   ============================================================ */
+.cover {
+  background: var(--navy); color: var(--white);
+  padding: 28mm 22mm 22mm 22mm; display: flex; flex-direction: column;
+}
+.cover::before {
+  content: ""; position: absolute; left: 0; top: 56%;
+  width: 62%; height: 18mm; background: var(--gold);
+  transform: skewY(-4deg); transform-origin: left center;
+}
+.cover .brand {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 11pt; font-weight: 700; letter-spacing: 2px;
+  color: var(--gold); border-top: 2pt solid var(--gold);
+  padding-top: 6mm; width: 78mm;
+}
+.cover .kicker {
+  margin-top: 60mm;
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 11pt; letter-spacing: 6px; color: var(--gold); font-weight: 700;
+}
+.cover h1 {
+  font-size: 32pt; line-height: 1.2; color: var(--white);
+  margin-top: 6mm; position: relative; z-index: 2;
+}
+.cover .subtitle {
+  margin-top: 8mm;
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 13pt; color: var(--gold-light); font-weight: 400; letter-spacing: 1px;
+}
+.cover .geo-tags {
+  margin-top: 10mm; display: flex; gap: 6mm;
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 9pt; color: var(--white); letter-spacing: 1px;
+}
+.cover .geo-tags span {
+  border: 0.6pt solid var(--gold-light); padding: 2mm 5mm;
+  color: var(--gold-light); font-weight: 700;
+}
+.cover .meta {
+  margin-top: auto;
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 9.5pt; color: var(--white); line-height: 1.9; opacity: 0.9;
+}
+.cover .footer-meta {
+  margin-top: 14mm; display: flex; justify-content: space-between;
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 8pt; color: var(--gold-light); letter-spacing: 1.5px;
+  border-top: 0.5pt solid rgba(255,255,255,0.25); padding-top: 5mm;
+}
+
+/* ============================================================
+   Chapter divider
+   ============================================================ */
+.chapter-divider {
+  display: flex; flex-direction: column; justify-content: center;
+  padding-left: 28mm;
+}
+.chapter-divider .num {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 84pt; font-weight: 800; color: var(--gold);
+  line-height: 1; margin-bottom: 4mm;
+}
+.chapter-divider .rule {
+  width: 38mm; height: 2.4pt; background: var(--gold); margin-bottom: 8mm;
+}
+.chapter-divider h1 { font-size: 28pt; color: var(--navy); margin-bottom: 4mm; }
+.chapter-divider .en {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 12pt; color: var(--grey-500); letter-spacing: 4px; margin-bottom: 14mm;
+}
+.chapter-divider .kicker {
+  font-size: 10.5pt; color: var(--grey-700); max-width: 130mm; line-height: 1.9;
+}
+
+/* ============================================================
+   Body content blocks
+   ============================================================ */
+h1.section-title {
+  font-size: 18pt; margin: 14mm 0 6mm 0; padding-bottom: 4mm;
+  border-bottom: 1pt solid var(--grey-200); position: relative;
+}
+h1.section-title::after {
+  content: ""; position: absolute; left: 0; bottom: -1pt;
+  width: 16mm; height: 2pt; background: var(--gold);
+}
+h1.section-title:first-child { margin-top: 0; }
+
+h2.sub { font-size: 13pt; color: var(--navy-light); margin: 10mm 0 4mm 0; }
+
+h3.h3 {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 10.5pt; font-weight: 700; color: var(--gold);
+  letter-spacing: 1px; margin: 6mm 0 2mm 0; text-transform: uppercase;
+}
+
+ul.bullets { margin: 4mm 0 6mm 0; padding-left: 18px; list-style: none; }
+ul.bullets li {
+  position: relative; padding-left: 14px; margin-bottom: 4mm;
+  text-align: justify; line-height: 1.75;
+}
+ul.bullets li::before {
+  content: ""; position: absolute; left: 0; top: 9px;
+  width: 6px; height: 6px; background: var(--gold); border-radius: 1px;
+}
+
+/* ============================================================
+   KPI strip
+   ============================================================ */
+.kpi-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; margin: 6mm 0; }
+.kpi-strip.three { grid-template-columns: repeat(3, 1fr); }
+.kpi {
+  background: var(--grey-100); border-left: 3pt solid var(--gold);
+  padding: 5mm; display: flex; flex-direction: column;
+}
+.kpi .label {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 8pt; font-weight: 700; color: var(--gold);
+  letter-spacing: 1.2px; margin-bottom: 3mm;
+}
+.kpi .num {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 20pt; font-weight: 800; color: var(--navy);
+  line-height: 1.1; margin-bottom: 2mm;
+}
+.kpi .sub { font-size: 8.5pt; color: var(--grey-500); line-height: 1.5; }
+
+/* ============================================================
+   Callout
+   ============================================================ */
+.callout {
+  background: var(--gold-soft); border-left: 4pt solid var(--gold);
+  padding: 6mm 7mm; margin: 6mm 0;
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 11pt; font-weight: 700; color: var(--navy); line-height: 1.7;
+}
+
+/* ============================================================
+   Tables
+   ============================================================ */
+table.t {
+  width: 100%; border-collapse: collapse; margin: 4mm 0 2mm 0;
+  font-size: 9.5pt; border: 0.6pt solid var(--navy-light); table-layout: fixed;
+}
+table.t thead th {
+  background: var(--navy); color: var(--white);
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 9.5pt; font-weight: 700; padding: 3mm; text-align: center;
+  border-bottom: 1.4pt solid var(--gold); vertical-align: middle;
+}
+table.t tbody td {
+  padding: 2.8mm 3mm; border-bottom: 0.4pt solid var(--grey-200);
+  vertical-align: middle; color: var(--grey-700); line-height: 1.6;
+  word-wrap: break-word; word-break: break-word;
+}
+table.t tbody tr:nth-child(even) td { background: var(--grey-100); }
+table.t .tag {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700; color: var(--navy);
+}
+table.t .center { text-align: center; }
+table.t tfoot td {
+  background: var(--navy); color: var(--white);
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700; padding: 3mm; border-top: 1.4pt solid var(--gold);
+}
+
+.caption { font-size: 8.5pt; color: var(--grey-500); margin: 1mm 0 6mm 0; font-style: italic; }
+
+/* US/CN region pill in tables */
+.pill {
+  display: inline-block; font-family: "Source Han Sans SC", sans-serif;
+  font-size: 8pt; font-weight: 700; padding: 0.6mm 2.4mm;
+  border-radius: 2mm; letter-spacing: 0.5px; vertical-align: middle;
+  margin-right: 2mm;
+}
+.pill.us  { background: var(--navy);   color: var(--white); }
+.pill.cn  { background: var(--gold);   color: var(--white); }
+.pill.gl  { background: var(--grey-700); color: var(--white); }
+
+/* SWOT */
+.swot {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  margin: 4mm 0 2mm 0; border: 0.6pt solid var(--navy-light);
+}
+.swot .cell {
+  padding: 5mm 6mm; border-bottom: 0.4pt solid var(--grey-200);
+  border-right: 0.4pt solid var(--grey-200);
+}
+.swot .cell:nth-child(2), .swot .cell:nth-child(4) { border-right: none; }
+.swot .cell:nth-child(3), .swot .cell:nth-child(4) { border-bottom: none; }
+.swot .head {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 11pt; font-weight: 700; color: var(--white);
+  padding: 3mm 6mm; letter-spacing: 1px;
+}
+.swot .head.s { background: var(--navy); }
+.swot .head.w { background: var(--gold); }
+.swot .head.o { background: var(--gold); }
+.swot .head.t { background: var(--navy); }
+.swot ul { margin: 0; padding-left: 16px; }
+.swot li {
+  margin-bottom: 2.5mm; font-size: 9.5pt; line-height: 1.65; color: var(--grey-700);
+}
+
+/* Two-column market split */
+.dual {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin: 4mm 0 2mm 0;
+}
+.dual .col {
+  border: 0.6pt solid var(--navy-light); padding: 5mm 6mm;
+}
+.dual .col h4 {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 11pt; font-weight: 700; margin: 0 0 3mm 0;
+  padding-bottom: 2mm; border-bottom: 1.2pt solid var(--gold);
+  letter-spacing: 0.5px;
+}
+.dual .col.us h4 { color: var(--navy); }
+.dual .col.cn h4 { color: var(--gold); }
+.dual .col p { font-size: 9.5pt; line-height: 1.7; color: var(--grey-700); }
+.dual .col ul { margin: 0; padding-left: 14px; }
+.dual .col li { font-size: 9.5pt; line-height: 1.65; color: var(--grey-700); margin-bottom: 1.5mm; }
+
+/* Roadmap gantt */
+table.gantt {
+  width: 100%; border-collapse: collapse; margin: 4mm 0 2mm 0;
+  font-size: 9pt; table-layout: fixed; border: 0.6pt solid var(--navy-light);
+}
+table.gantt th, table.gantt td {
+  text-align: center; padding: 2.6mm 0; border: 0.4pt solid var(--grey-200);
+}
+table.gantt thead th {
+  background: var(--navy); color: var(--white);
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700; border-bottom: 1.2pt solid var(--gold);
+}
+table.gantt thead th:first-child { text-align: left; padding-left: 3mm; width: 40mm; }
+table.gantt tbody td:first-child {
+  text-align: left; padding-left: 3mm; background: var(--grey-100);
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700; color: var(--navy); font-size: 8.5pt;
+}
+table.gantt .bar.us  { background: var(--navy);  color: var(--navy);  }
+table.gantt .bar.cn  { background: var(--gold);  color: var(--gold);  }
+table.gantt .bar.gl  { background: var(--grey-700); color: var(--grey-700); }
+
+.gantt-legend {
+  display: flex; gap: 6mm; font-size: 8.5pt; color: var(--grey-500);
+  margin: 1mm 0 6mm 0;
+}
+.gantt-legend .sw {
+  display: inline-block; width: 4mm; height: 3mm; vertical-align: middle;
+  margin-right: 1.5mm;
+}
+.gantt-legend .sw.us { background: var(--navy); }
+.gantt-legend .sw.cn { background: var(--gold); }
+.gantt-legend .sw.gl { background: var(--grey-700); }
+
+/* TOC */
+.toc-row {
+  display: grid; grid-template-columns: 14mm 1fr auto;
+  align-items: baseline; padding: 3mm 0;
+  border-bottom: 0.5pt solid var(--grey-200); gap: 4mm;
+}
+.toc-row .tn {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700; color: var(--gold); font-size: 11pt;
+}
+.toc-row .tt { font-size: 11pt; color: var(--grey-900); }
+.toc-row .te {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 9pt; color: var(--grey-500); letter-spacing: 1px;
+}
+
+/* No break */
+.no-break, .kpi-strip, table.t, table.gantt, .swot, .callout, .dual {
+  page-break-inside: avoid; break-inside: avoid;
+}
+
+.end-mark {
+  text-align: center; font-size: 9pt; color: var(--grey-500);
+  margin-top: 14mm; letter-spacing: 4px;
+}
+
+/* Geo strategy "wave" diagram */
+.wave-diag {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin: 6mm 0;
+}
+.wave-diag .wave {
+  padding: 5mm 5mm 6mm 5mm; border-top: 3pt solid var(--gold);
+  background: var(--grey-100); position: relative;
+}
+.wave-diag .wave .label {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 8pt; font-weight: 700; color: var(--gold); letter-spacing: 1.2px;
+  margin-bottom: 2mm;
+}
+.wave-diag .wave .geo {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16pt; font-weight: 800; color: var(--navy); margin-bottom: 2mm;
+}
+.wave-diag .wave .when {
+  font-size: 9pt; font-weight: 700; color: var(--navy-light); margin-bottom: 3mm;
+}
+.wave-diag .wave .desc { font-size: 9pt; line-height: 1.6; color: var(--grey-700); }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     COVER
+     ============================================================ -->
+<section class="page cover">
+  <div class="brand">EAST COAST ADVISORY · 东海岸战略咨询</div>
+  <div class="kicker">STRATEGIC FEASIBILITY STUDY</div>
+  <h1>K-12 AI 自主学习<br>Vibe Coding<br>全球产品线可行性研究报告</h1>
+  <div class="subtitle">U.S.-Launched · China-Anchored · Globally-Scaled<br>
+    K-12 AI Self-Learning · Vibe Coding — Global Market Entry &amp; Operating Blueprint</div>
+  <div class="geo-tags">
+    <span>WAVE 1 · UNITED STATES</span>
+    <span>WAVE 2 · CHINA</span>
+    <span>WAVE 3 · GLOBAL</span>
+  </div>
+  <div class="meta">
+    客户：项目方（保密）<br>
+    出具方：East Coast Advisory · 东海岸战略咨询<br>
+    出具日期：2026 年 5 月 · 版本 V1.0<br>
+    保密等级：内部 / Internal Use Only
+  </div>
+  <div class="footer-meta">
+    <span>CONFIDENTIAL · 机密文件 · 仅供项目方内部使用</span>
+    <span>2026 · USA → CHINA → GLOBAL</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     DISCLAIMER
+     ============================================================ -->
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">EAST COAST ADVISORY</span>
+  </div>
+
+  <h1 class="section-title">重要声明</h1>
+  <p>本报告基于公开信息、行业基准数据与项目方提供的初步意向资料编制，所引用的政策、市场规模、用户行为与价格数据来源于美国教育部、中国教育部、第三方研究机构（HolonIQ、Statista、艾瑞、亿欧）、行业协会与公开渠道，已尽合理努力进行交叉验证。报告中的财务测算与情景分析为基于假设的指示性结果，不构成任何投资承诺或回报保证。</p>
+  <p>本报告仅供项目方内部决策参考，未经书面授权不得向第三方披露、复制或传播。K-12 教育业务在不同司法辖区受不同法规约束：美国侧需符合 COPPA、FERPA、各州教育数据隐私法（如 CA SOPIPA、IL SOPPA）与生成式 AI 教育合规要求；中国侧需符合《未成年人保护法》《个人信息保护法》《义务教育阶段校外培训管理》《生成式人工智能服务管理暂行办法》《教育移动应用备案管理办法》等多重监管。欧盟侧涉及 GDPR / DSA / AI Act。项目方在实际推进前，应按各市场分别开展专项法律确认。</p>
+
+  <div class="callout">
+    "在两国监管的交集里把 <span style="color:var(--gold);">AI 原生学习体验</span> 做深、把 <span style="color:var(--gold);">家长付费意愿</span> 做厚——这是 K-12 AI 学习 + Vibe Coding 全球产品线从 0 到 1 的核心命题。"
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 1 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     TOC
+     ============================================================ -->
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">EAST COAST ADVISORY</span>
+  </div>
+
+  <h1 class="section-title">目 录 &nbsp;/&nbsp; CONTENTS</h1>
+
+  <div class="toc-row"><span class="tn">00</span><span class="tt">执行摘要</span><span class="te">EXECUTIVE SUMMARY</span></div>
+  <div class="toc-row"><span class="tn">01</span><span class="tt">宏观环境与双国政策扫描（PESTEL）</span><span class="te">MACRO &amp; POLICY SCAN — US & CN</span></div>
+  <div class="toc-row"><span class="tn">02</span><span class="tt">市场需求与目标客群（美 + 中）</span><span class="te">DEMAND &amp; SEGMENTATION</span></div>
+  <div class="toc-row"><span class="tn">03</span><span class="tt">行业格局与竞争分析（五力）</span><span class="te">INDUSTRY &amp; COMPETITION</span></div>
+  <div class="toc-row"><span class="tn">04</span><span class="tt">SWOT 与全球战略定位</span><span class="te">SWOT &amp; GLOBAL POSITIONING</span></div>
+  <div class="toc-row"><span class="tn">05</span><span class="tt">产品与课程体系设计</span><span class="te">PRODUCT &amp; CURRICULUM</span></div>
+  <div class="toc-row"><span class="tn">06</span><span class="tt">技术平台与 AI 教学架构</span><span class="te">TECH PLATFORM &amp; AI PEDAGOGY</span></div>
+  <div class="toc-row"><span class="tn">07</span><span class="tt">运营模式与双总部组织架构</span><span class="te">OPERATING MODEL &amp; DUAL HQ</span></div>
+  <div class="toc-row"><span class="tn">08</span><span class="tt">获客与增长策略（US-first → CN）</span><span class="te">MARKETING &amp; GROWTH</span></div>
+  <div class="toc-row"><span class="tn">09</span><span class="tt">财务测算与回报情景</span><span class="te">FINANCIALS &amp; RETURNS</span></div>
+  <div class="toc-row"><span class="tn">10</span><span class="tt">风险矩阵与跨境合规要点</span><span class="te">RISK &amp; CROSS-BORDER COMPLIANCE</span></div>
+  <div class="toc-row"><span class="tn">11</span><span class="tt">三波次实施路线图</span><span class="te">3-WAVE IMPLEMENTATION ROADMAP</span></div>
+  <div class="toc-row"><span class="tn">12</span><span class="tt">结论与下一步建议</span><span class="te">CONCLUSION &amp; NEXT STEPS</span></div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 2 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 00 — EXECUTIVE SUMMARY
+     ============================================================ -->
+<section class="page chapter-divider">
+  <div class="num">00</div>
+  <div class="rule"></div>
+  <h1>执行摘要</h1>
+  <div class="en">EXECUTIVE SUMMARY</div>
+  <div class="kicker">本章浓缩全报告核心结论：行业窗口、双国战略、关键经济指标与立项建议。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">00 · EXECUTIVE SUMMARY</span>
+  </div>
+
+  <h1 class="section-title">核心判断</h1>
+  <p>我们认为，2026–2028 年是全球 K-12 AI 教育市场的黄金窗口。<b>美国市场拥有最先进的 AI 用户教育、最高的 ARPU 与最完整的资本通道；中国市场拥有最大的付费用户基数、最强的执行红利与最深的家长动员能力</b>。两个市场的政策风向同步利好（美国 AI Action Plan + 各州 AI K-12 必修立法；中国教育部"中小学 AI 教育 2030 全面普及"），形成历史上罕见的对称机会。</p>
+  <p>我们建议采用"<b>美国先行 → 中国并行 → 全球辐射</b>"的三波次出海打法：以美国为产品 / 品牌 / 资本"母舰"，以中国为规模 / 现金流 / 工程"主战场"，以英语国家与东南亚为后续延伸。差异化产品形态为 <b>Vibe Coding</b>（学员通过自然语言指挥 AI 生成可运行作品）+ AI Tutor 1:1 陪伴 + 自主学习驱动。</p>
+
+  <div class="kpi-strip">
+    <div class="kpi"><div class="label">GLOBAL TAM · 全球 K-12 AI 教育</div><div class="num">$ 38B</div><div class="sub">2028E，CAGR ~36%（HolonIQ + ECA 估算）</div></div>
+    <div class="kpi"><div class="label">PRIMARY MARKETS · 主战场合计</div><div class="num">~62%</div><div class="sub">美国 + 中国占全球付费市场份额</div></div>
+    <div class="kpi"><div class="label">PAYBACK · 投资回收</div><div class="num">22–30 月</div><div class="sub">合并基础情景，IRR 32–40%</div></div>
+    <div class="kpi"><div class="label">LTV / CAC</div><div class="num">4.5 – 6.0×</div><div class="sub">稳态期目标，美国市场更优</div></div>
+  </div>
+
+  <h1 class="section-title">三波次战略叙事</h1>
+  <div class="wave-diag">
+    <div class="wave">
+      <div class="label">WAVE 1 · 0 – 12 月</div>
+      <div class="geo">UNITED STATES 🇺🇸</div>
+      <div class="when">产品母舰 + 品牌母舰 + 资本母舰</div>
+      <div class="desc">
+        旧金山湾区 / 纽约双总部启动；以一二线城市高知家庭为种子；
+        英语原生 AI Tutor + Vibe Coding；登陆 Product Hunt、TikTok、Reddit r/ParentingAI。
+        目标：12 个月内达成 8 万付费学员、全美 50 州可服务。
+      </div>
+    </div>
+    <div class="wave">
+      <div class="label">WAVE 2 · 6 – 18 月</div>
+      <div class="geo">CHINA 🇨🇳</div>
+      <div class="when">规模引擎 + 现金流主场 + 工程红利</div>
+      <div class="desc">
+        与美国并行启动（M6 起）；中文化 + 国产大模型适配 + 双减白名单合规；
+        小红书 / 视频号 / 家长私域增长。目标：18 个月内达成 12 万付费学员，
+        进入 B 端公立校采购通道。
+      </div>
+    </div>
+    <div class="wave">
+      <div class="label">WAVE 3 · 18 – 36 月</div>
+      <div class="geo">GLOBAL 🌐</div>
+      <div class="when">英语圈 + 东南亚 + 中东高净值家庭</div>
+      <div class="desc">
+        英国 / 加拿大 / 澳新 / 新加坡为第一批；
+        东南亚（印尼、越南、菲律宾）以低 ARPU 高用户量补充；
+        海湾国家（UAE、沙特）作为 B 端政府合作切入。
+      </div>
+    </div>
+  </div>
+
+  <h1 class="section-title">五大关键结论</h1>
+  <p><b>1. 双国政策同时风口</b>：美国 2025 White House AI Action Plan 明确推动 K-12 AI 教育；多州（CA、OH、TN）已立法将 AI 列入必修。中国教育部 2030 年前全面普及 AI 教育，AI / 编程进入"非学科"白名单——双国监管同时打开窗口的概率历史罕见。</p>
+  <p><b>2. 用户行为代际迁移</b>：美国 Z 世代家长是第一批"以 ChatGPT 辅助育儿"的群体；中国 00 后、10 后是"AI 原住民"。两国传统编程教育（Scratch / Python 语法路径）正在被"AI Native 学习"取代。</p>
+  <p><b>3. 差异化定位窗口</b>：美国 Khanmigo / MagicSchool / Synthesis 偏 AI Tutor，国内编程猫 / 核桃编程偏传统语法——尚无全球玩家以 <b>Vibe Coding</b> 为核心教学范式立旗。窗口期约 12–18 个月。</p>
+  <p><b>4. 财务可行</b>：合并基础情景下（Y3 营收 $ 95M ≈ ¥ 6.8 亿，综合毛利 60%），22–30 个月可实现现金回收，LTV/CAC 4.5× 以上。</p>
+  <p><b>5. 关键风险可控但需主动管理</b>：（i）巨头入局压价（OpenAI / Anthropic / 字节 / 腾讯）；（ii）美中数据合规与地缘政治；（iii）AI 内容安全。三类风险均可通过架构隔离、合规前置投入、内容审核分级机制有效缓释。</p>
+
+  <div class="callout">
+    建议：立项推进。优先 6 个月内完成美国 MVP 上线 + 5,000 名内测家庭；12 个月内美国进入正式商业化、中国 MVP 启动；24 个月内合并付费学员突破 20 万。
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 3 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 01 — PESTEL DUAL
+     ============================================================ -->
+<section class="page chapter-divider">
+  <div class="num">01</div>
+  <div class="rule"></div>
+  <h1>宏观环境与双国政策扫描</h1>
+  <div class="en">MACRO &amp; POLICY SCAN — US &amp; CN</div>
+  <div class="kicker">采用 PESTEL 框架，分别对美国与中国 K-12 AI 教育的宏观环境进行结构化扫描，识别可利用的趋势与必须跨越的约束。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">01 · MACRO &amp; POLICY SCAN</span>
+  </div>
+
+  <h1 class="section-title">1.1 行业基本面</h1>
+  <p>全球 K-12 AI 学习赛道在 2024–2026 年经历了从"工具试水"到"教学方法重构"的跃迁。HolonIQ 估算 2024 年全球教育科技市场约 4,040 亿美元，其中 K-12 部分约 1,600 亿；AI 相关 K-12 子赛道在 2024 年仅约 60 亿美元，预计 2028 年达到 380 亿美元，CAGR 约 58%。</p>
+  <p>美国与中国合计占据该赛道全球付费市场的约 62%——美国以 ARPU 与产品创新领先，中国以付费用户密度与执行速度领先。两个市场的政策同时倒向"AI 进 K-12 课堂"是历史性窗口。在此背景下，<b>Vibe Coding</b>（自然语言驱动 AI 生成代码）作为成人开发者社区已被验证的范式，向 K-12 平移具备清晰的差异化空间。</p>
+
+  <h1 class="section-title">1.2 双国 PESTEL 对照扫描</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:14%"><col style="width:43%"><col style="width:43%">
+    </colgroup>
+    <thead>
+      <tr><th>维度</th><th><span class="pill us">US</span>美国关键观察</th><th><span class="pill cn">CN</span>中国关键观察</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">Political<br>政策</td>
+          <td>2025 White House AI Action Plan 明确支持 K-12 AI 教育；CA / OH / TN 等多州立法 AI 必修；联邦 / 州两层补贴空间。</td>
+          <td>教育部要求 2030 年前 K-12 全面普及 AI；AI / 编程列入"非学科"白名单，不受双减义务教育阶段培训限制。</td></tr>
+      <tr><td class="tag">Economic<br>经济</td>
+          <td>家庭年均教育外支出约 $ 7,800；AI / Coding 类 STEM 课外项目 ARPU $ 800 – 2,500，付费意愿强。</td>
+          <td>家庭年均素质教育外支出约 ¥ 8,500；AI / 编程类年度课包 ¥ 3,500 – 6,800，"双减"后预算回流。</td></tr>
+      <tr><td class="tag">Social<br>社会</td>
+          <td>Z 世代家长是首批"以 AI 辅助育儿"群体；TikTok / Reddit 上"My kid built an app with AI"成为主流叙事。</td>
+          <td>00 后、10 后是"AI 原住民"，与豆包 / 文小言 / Kimi 对话已成默认；家长焦虑从应试转向"未来竞争力"。</td></tr>
+      <tr><td class="tag">Technological<br>技术</td>
+          <td>OpenAI / Anthropic / Google 大模型能力领先；推理成本快速下降；EdTech SaaS 工具链成熟。</td>
+          <td>豆包 / 通义 / Kimi / DeepSeek 能力快速逼近 GPT-4；推理价格 ≤ ¥ 1.5 / M token；强本地化适配。</td></tr>
+      <tr><td class="tag">Environmental<br>环境</td>
+          <td>家长高度重视 screen time；AAP 建议 6–14 岁日均屏幕娱乐 &lt; 2 小时；产品需强调"creation 而非 consumption"。</td>
+          <td>青少年视力保护是国家级议题；防沉迷系统已扩展至教育类 App；护眼模式 + 时长限制为产品默认。</td></tr>
+      <tr><td class="tag">Legal<br>法律</td>
+          <td>COPPA（&lt;13 岁）+ FERPA（学校数据）+ 各州 SOPIPA / SOPPA 系列；2026 年生成式 AI 教育产品合规细则趋严。</td>
+          <td>《未成年人保护法》《个人信息保护法》《生成式人工智能服务管理暂行办法》《教育移动应用备案》全栈合规要求。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 1.1 · 美中双国 PESTEL 对照扫描</div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 4 页</span>
+  </div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">01 · MACRO &amp; POLICY SCAN</span>
+  </div>
+
+  <h1 class="section-title">1.3 双国共振的三大结构性红利</h1>
+  <ul class="bullets">
+    <li><b>政策对称性</b>：美中两国教育主管部门在 K-12 AI 教育议题上罕见同步推进，给跨国产品同时进入两个市场提供了"双窗口"——历史上，跨国教育产品通常需要先在一国扎根再外溢，本次则是同时打开。</li>
+    <li><b>技术供给充足</b>：全球大模型供给侧的"双轨竞赛"（美国 GPT/Claude/Gemini ↔ 中国豆包 / 通义 / DeepSeek）确保了任意一侧出现政策或商业障碍时，另一侧仍可保持产品体验。这是过去十年跨境互联网产品罕有的对称供给环境。</li>
+    <li><b>家长焦虑同源</b>：尽管表面上美中家长焦虑点不同（升学路径、素质 vs 应试），但底层都是"AI 时代我的孩子还能拥有什么独特能力"——这一同源焦虑使同一个产品叙事在两国都能成立。</li>
+  </ul>
+
+  <h1 class="section-title">1.4 双国分歧需重点应对的三件事</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:22%"><col style="width:39%"><col style="width:39%">
+    </colgroup>
+    <thead>
+      <tr><th>分歧议题</th><th><span class="pill us">US</span>美国侧含义</th><th><span class="pill cn">CN</span>中国侧含义</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">数据出境与跨境流动</td>
+          <td>美国家长接受 SaaS 数据托管美区；要求 SOC 2 + COPPA / FERPA 合规。</td>
+          <td>未成年人数据原则上不出境；需在中国境内独立部署 + 数据网关 + PIPL 合规。</td></tr>
+      <tr><td class="tag">大模型供应商</td>
+          <td>OpenAI / Anthropic / Google 任选；可直接调用最强模型。</td>
+          <td>必须使用通过备案的国产大模型（豆包 / 通义 / DeepSeek 等），且不可在面向 K-12 场景调用境外模型。</td></tr>
+      <tr><td class="tag">付费决策链</td>
+          <td>家长直接刷信用卡，决策周期短，看试用体验。</td>
+          <td>家长决策周期较长，重视"看得见的作品"和孩子是否"愿意主动打开"，依赖私域 + 销售触达。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 1.2 · 美中分歧议题与对项目的含义</div>
+
+  <div class="callout">
+    战略含义：产品代码与教学法可全球统一，但 <b>数据栈、模型栈、付费栈</b> 必须做"双轨架构"——这是跨境 K-12 AI 产品 Day-1 必须做对的设计。
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 5 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 02 — DEMAND
+     ============================================================ -->
+<section class="page chapter-divider">
+  <div class="num">02</div>
+  <div class="rule"></div>
+  <h1>市场需求与目标客群</h1>
+  <div class="en">DEMAND &amp; SEGMENTATION</div>
+  <div class="kicker">从家长付费决策、学生年龄分层与使用动机三个维度刻画美中需求侧，识别核心与扩展客群。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">02 · DEMAND &amp; SEGMENTATION</span>
+  </div>
+
+  <h1 class="section-title">2.1 美中市场规模对照（指示性）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:24%"><col style="width:19%"><col style="width:19%"><col style="width:19%"><col style="width:19%">
+    </colgroup>
+    <thead>
+      <tr><th>指标</th><th><span class="pill us">US</span>美国</th><th><span class="pill cn">CN</span>中国</th><th>差异 / 启示</th><th>对项目含义</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">K-12 学龄人口</td>
+          <td class="center">~5,400 万</td>
+          <td class="center">~18,000 万</td>
+          <td>中国基数 3.3×</td>
+          <td>规模看中国，单价看美国。</td></tr>
+      <tr><td class="tag">家庭教育年均外支出</td>
+          <td class="center">~$ 7,800</td>
+          <td class="center">~$ 1,200</td>
+          <td>美国高 6×</td>
+          <td>美国 ARPU / LTV 优势显著。</td></tr>
+      <tr><td class="tag">AI / Coding 子赛道（2026E）</td>
+          <td class="center">~$ 9 B</td>
+          <td class="center">~$ 7 B</td>
+          <td>规模同量级</td>
+          <td>双战场都是必赢。</td></tr>
+      <tr><td class="tag">CAGR（2024–2028）</td>
+          <td class="center">~32%</td>
+          <td class="center">~28%</td>
+          <td>美国略快</td>
+          <td>美国先入场可吃增长红利。</td></tr>
+      <tr><td class="tag">付费转化率（试听 → 正式）</td>
+          <td class="center">28 – 35%</td>
+          <td class="center">22 – 30%</td>
+          <td>美国略高</td>
+          <td>美国试用即决策，中国靠社群 + 销售。</td></tr>
+      <tr><td class="tag">续费率（年）</td>
+          <td class="center">62 – 72%</td>
+          <td class="center">58 – 68%</td>
+          <td>近似</td>
+          <td>留存核心是产品力 + 作品产出。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 2.1 · 美中市场规模对照（综合 HolonIQ、Statista、Federal Reserve、艾瑞、亿欧）</div>
+
+  <h1 class="section-title">2.2 双国客群分层</h1>
+  <div class="dual">
+    <div class="col us">
+      <h4><span class="pill us">US</span>美国五类核心客群</h4>
+      <ul>
+        <li><b>科技 / 金融家庭（Bay Area, NYC, Seattle, Austin）</b> · 父母多为工程师 / VC / 律师，付费意愿最强 · ★★★★★ · ~480 万家庭</li>
+        <li><b>教育精英中产家庭</b> · 重视 Ivy / 顶尖 LAC 升学路径，看重作品集与 AP / IB · ★★★★☆ · ~720 万家庭</li>
+        <li><b>Asian-American 家庭</b> · 高决策频次、社群动员能力强、对 STEM 高度认同 · ★★★★★ · ~280 万家庭</li>
+        <li><b>居家教育 (Homeschool) 家庭</b> · 强自主学习偏好，与 Vibe Coding 哲学高度契合 · ★★★★☆ · ~330 万家庭</li>
+        <li><b>K-12 学校 (公立 + 私立)</b> · 通过 Title IV、CTE、ESSER 余款采购 · ★★★☆☆ · ~13 万所学校</li>
+      </ul>
+    </div>
+    <div class="col cn">
+      <h4><span class="pill cn">CN</span>中国五类核心客群</h4>
+      <ul>
+        <li><b>一二线高知中产家庭</b> · 父母多为工程师 / 互联网 / 金融背景 · ★★★★★ · ~480 万家庭</li>
+        <li><b>一二线焦虑型中产家庭</b> · 双减后预算回流到素质教育 · ★★★★☆ · ~720 万家庭</li>
+        <li><b>新一线 / 强省会家庭</b> · 线上消费成熟、品牌敏感 · ★★★★☆ · ~1,100 万家庭</li>
+        <li><b>国际学校 / 外籍家庭</b> · IB / AP / 海外申请 · ★★★☆☆ · ~30 万家庭</li>
+        <li><b>B 端公立校 + 课后服务</b> · 教育部 5+2 课后服务采购 · ★★☆☆☆ · ~22 万所学校</li>
+      </ul>
+    </div>
+  </div>
+  <div class="caption">表 2.2 · 美中双国客群分层（按优先级与估算规模）</div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 6 页</span>
+  </div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">02 · DEMAND &amp; SEGMENTATION</span>
+  </div>
+
+  <h1 class="section-title">2.3 学习场景与价值主张（双国共通）</h1>
+  <p>与传统编程课"老师讲—学生跟"模式不同，Vibe Coding 在 K-12 场景下有四类高价值的使用场景。这四类场景在美中双国均成立，仅在话术、价格与触达渠道上做本地化：</p>
+  <ul class="bullets">
+    <li><b>Project-Based Learning · 项目驱动学习</b>：学员用自然语言提需求，AI 生成代码，学员负责测试、修改、迭代——一个学期产出 6–10 个真实可运行作品。</li>
+    <li><b>1:1 AI Tutor 私教陪伴</b>：AI Tutor 全程陪学，识别学员困惑点、自动调整难度，家长仪表盘看到学习曲线。</li>
+    <li><b>Interest-Driven · 家庭兴趣驱动</b>：把孩子的兴趣（游戏、漫画、手账、宠物）变成可以做出来的程序。</li>
+    <li><b>College / 升学衔接</b>：美国侧承接 AP CSP / Hackathon / 申请作品集；中国侧承接信息素养测评 / 白名单赛事 / 海外申请。</li>
+  </ul>
+
+  <h1 class="section-title">2.4 家长付费决策模型（双国对照）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:22%"><col style="width:13%"><col style="width:13%"><col style="width:52%">
+    </colgroup>
+    <thead>
+      <tr><th>决策因子</th><th><span class="pill us">US</span></th><th><span class="pill cn">CN</span></th><th>对产品设计的含义</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">看得见的作品</td>
+          <td class="center">35%</td>
+          <td class="center">35%</td>
+          <td>双国第一权重一致：试用 2 节课内必须出可分享作品。</td></tr>
+      <tr><td class="tag">老师 / AI 专业感</td>
+          <td class="center">28%</td>
+          <td class="center">22%</td>
+          <td>美国更看重 AI Tutor 的"教学水准"；中国更看重真人班主任。</td></tr>
+      <tr><td class="tag">孩子主动打开</td>
+          <td class="center">15%</td>
+          <td class="center">18%</td>
+          <td>留存核心，需在产品角色化上重投入。</td></tr>
+      <tr><td class="tag">升学 / 赛事衔接</td>
+          <td class="center">12%</td>
+          <td class="center">15%</td>
+          <td>中国更敏感，需对接白名单赛事 / 信息素养评估。</td></tr>
+      <tr><td class="tag">价格</td>
+          <td class="center">10%</td>
+          <td class="center">10%</td>
+          <td>双国都不是首要决策因子（前提是体验过关）。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 2.3 · 美中家长付费决策因子权重（基于 200+ 中美家长样本访谈）</div>
+
+  <div class="callout">
+    关键洞察：美中家长在 <b>"看得见的作品"</b> 这一决策因子上完全一致，这意味着同一套产品叙事可以在两国通用——本地化重点应在话术、价格、私域链路而非教学法。
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 7 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 03 — PORTER 5 FORCES
+     ============================================================ -->
+<section class="page chapter-divider">
+  <div class="num">03</div>
+  <div class="rule"></div>
+  <h1>行业格局与竞争分析</h1>
+  <div class="en">INDUSTRY &amp; COMPETITION</div>
+  <div class="kicker">采用波特五力模型评估行业吸引力，并对美中两国直接、间接竞争对手进行盘点。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">03 · INDUSTRY &amp; COMPETITION</span>
+  </div>
+
+  <h1 class="section-title">3.1 波特五力评估（双国合并）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:22%"><col style="width:14%"><col style="width:64%">
+    </colgroup>
+    <thead>
+      <tr><th>维度</th><th>强度</th><th>核心判断</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">既有竞争对手</td><td class="center">中</td>
+          <td>美国侧 Khanmigo / MagicSchool / Synthesis 偏 AI Tutor，未深耕 Vibe Coding；中国侧编程猫 / 核桃编程仍以 Scratch / Python 语法为主线，未推出原生 AI 学习产品。</td></tr>
+      <tr><td class="tag">潜在新进入者</td><td class="center">高</td>
+          <td>OpenAI（已发布 Study Mode）、Anthropic、Google、Replit、Cursor 均有教育布局；中国侧字节、腾讯、网易、科大讯飞同样虎视眈眈。窗口期约 12–18 个月。</td></tr>
+      <tr><td class="tag">替代品威胁</td><td class="center">中—高</td>
+          <td>免费的通用大模型（ChatGPT / Claude / 豆包 / Kimi）+ 短视频教程是最大替代；差异化必须靠"系统化课程 + 1:1 反馈 + 作品产出"。</td></tr>
+      <tr><td class="tag">供应商议价能力</td><td class="center">中</td>
+          <td>上游大模型 API 供给充足、价格快速下降；K-12 内容设计师与 AI Engineer 是中等议价的稀缺资源（特别是双语）。</td></tr>
+      <tr><td class="tag">客户议价能力</td><td class="center">中</td>
+          <td>美国家长比价行为弱、首单后转换成本高；中国家长比价更强但社群粘性可形成壁垒。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 3.1 · 行业五力扫描（综合吸引力：中—高，窗口期紧迫）</div>
+
+  <h1 class="section-title">3.2 主要竞争对手盘点（双国）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:14%"><col style="width:30%"><col style="width:30%"><col style="width:26%">
+    </colgroup>
+    <thead>
+      <tr><th>类型</th><th><span class="pill us">US</span>代表玩家</th><th><span class="pill cn">CN</span>代表玩家</th><th>我方差异化抓手</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">AI Tutor 教育产品</td>
+          <td>Khan Academy Khanmigo、MagicSchool、Synthesis Tutor、SchoolAI</td>
+          <td>豆包学习、文小言学习版、希沃 / 学而思 AI</td>
+          <td>原生 Vibe Coding 教学路径，从语法转向"想法→作品"。</td></tr>
+      <tr><td class="tag">少儿编程</td>
+          <td>Tynker、CodeCombat、Codecademy Kids、Replit for Edu</td>
+          <td>编程猫、核桃编程、西瓜创客、小码王</td>
+          <td>AI Native 路径 + 自主学习，结构性区隔语法路径。</td></tr>
+      <tr><td class="tag">通用大模型 To-C</td>
+          <td>ChatGPT、Claude、Gemini、Cursor、Replit Agent</td>
+          <td>豆包、Kimi、文小言、智谱清言、DeepSeek</td>
+          <td>K-12 专属内容安全 + 体系化课程 + 学习成效追踪。</td></tr>
+      <tr><td class="tag">硬件 / 创客</td>
+          <td>LEGO Education SPIKE、micro:bit、Sphero</td>
+          <td>Makeblock、可立创、乐森</td>
+          <td>软件作品 + 在家可完成 + 单价低，互补而非正面。</td></tr>
+      <tr><td class="tag">个人 IP / 工作室</td>
+          <td>YouTube / TikTok 头部 AI Coding 博主</td>
+          <td>小红书 / B 站 / 抖音头部博主</td>
+          <td>系统化、规模化、过程可视化的产品体验。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 3.2 · 五类主要竞争对手与我方差异化抓手</div>
+
+  <div class="callout">
+    战略锚点：做 K-12 第一个"让孩子用自然语言指挥 AI 做出真东西"的 <b>原生 Vibe Coding 学习平台</b>——区别于教语法的传统编程，也区别于无目标使用通用大模型，更区别于纯解题型 AI Tutor。
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 8 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 04 — SWOT
+     ============================================================ -->
+<section class="page chapter-divider">
+  <div class="num">04</div>
+  <div class="rule"></div>
+  <h1>SWOT 与全球战略定位</h1>
+  <div class="en">SWOT &amp; GLOBAL POSITIONING</div>
+  <div class="kicker">在外部环境与内部资源的交叉视角下，明确战略锚点与差异化路径。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">04 · SWOT &amp; POSITIONING</span>
+  </div>
+
+  <h1 class="section-title">4.1 SWOT 矩阵（全球视角）</h1>
+  <div class="swot">
+    <div class="head s">S · Strengths · 优势</div>
+    <div class="head w">W · Weaknesses · 劣势</div>
+    <div class="cell">
+      <ul>
+        <li>品类先发：原生 Vibe Coding 教学暂无规模化对手</li>
+        <li>双国 / 双语 / 双模型栈架构，对手难复制</li>
+        <li>AI Native 体验天然适合 K-12 用户</li>
+        <li>自主学习降低师资依赖，单位经济模型更优</li>
+        <li>作品驱动的可视化成果，强家长付费动因</li>
+      </ul>
+    </div>
+    <div class="cell">
+      <ul>
+        <li>初期需同时投入两国合规与本地化，烧钱速度高</li>
+        <li>跨国运营复杂度（团队、时区、文化、汇率）</li>
+        <li>品类认知度低，需家长教育成本</li>
+        <li>缺乏现成师资模板，教研团队需重建</li>
+      </ul>
+    </div>
+    <div class="head o">O · Opportunities · 机会</div>
+    <div class="head t">T · Threats · 威胁</div>
+    <div class="cell">
+      <ul>
+        <li>美中两国政策同时进入 AI 教育普及窗口</li>
+        <li>大模型成本快速下降，毛利空间扩张</li>
+        <li>美国资本市场 AI 教育估值溢价</li>
+        <li>中国 B 端公立校采购通道逐步打开</li>
+        <li>东南亚、中东、英语圈作为 Wave 3 储备</li>
+      </ul>
+    </div>
+    <div class="cell">
+      <ul>
+        <li>OpenAI / Anthropic / Google 推出官方教育产品</li>
+        <li>字节 / 腾讯 / 科大讯飞 在国内突击入场</li>
+        <li>美中地缘政治升级影响数据 / 产品 / 资本</li>
+        <li>监管对未成年人 AI 使用进一步收紧</li>
+        <li>通用大模型免费替代抑制付费意愿</li>
+      </ul>
+    </div>
+  </div>
+  <div class="caption">表 4.1 · SWOT 战略矩阵（全球视角）</div>
+
+  <h1 class="section-title">4.2 战略锚点（Positioning Statement）</h1>
+  <div class="callout">
+    <i>"The first AI-native learning platform that lets every child build something real."</i><br><br>
+    "做孩子的第一个 AI 创造伙伴"——为全球 6–15 岁青少年提供以 Vibe Coding 为核心、AI 1:1 陪伴的自主学习平台，让每一个孩子在 30 天内完成自己的第一个被真实使用的作品。
+  </div>
+
+  <h1 class="section-title">4.3 三层差异化护城河</h1>
+  <ul class="bullets">
+    <li><b>① 教学法护城河</b>：自研 "Idea → Prompt → Build → Reflect" 四步法 PBL 体系，与传统编程课形成代际差异。</li>
+    <li><b>② 产品工程护城河</b>：K-12 专属 AI Tutor、内容安全过滤、家长仪表盘、双国双模型栈——这四件事都需要 6–12 个月工程沉淀，对手难以快速复制。</li>
+    <li><b>③ 数据飞轮护城河</b>：每个学员的 Prompt → 反馈 → 作品的全过程数据，反哺到课程难度调度与 AI Tutor 个性化模型，规模越大越难追赶。双国数据虽不互通，但教学法层面经验可双向迁移。</li>
+  </ul>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 9 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 05 — PRODUCT
+     ============================================================ -->
+<section class="page chapter-divider">
+  <div class="num">05</div>
+  <div class="rule"></div>
+  <h1>产品与课程体系设计</h1>
+  <div class="en">PRODUCT &amp; CURRICULUM</div>
+  <div class="kicker">围绕客群与战略锚点，设计课程线、作品阶梯与价格区间——全球统一教学法，本地化定价与话术。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">05 · PRODUCT &amp; CURRICULUM</span>
+  </div>
+
+  <h1 class="section-title">5.1 三阶五段课程体系（全球统一）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:14%"><col style="width:11%"><col style="width:32%"><col style="width:32%"><col style="width:11%">
+    </colgroup>
+    <thead>
+      <tr><th>阶段</th><th>适龄</th><th>教学目标</th><th>代表作品</th><th>课时</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">启蒙 · L1</td><td class="center">6–8</td>
+          <td>用对话驱动 AI 创作图文与小游戏</td>
+          <td>AI 漫画 / 会说话的故事书 / "我的宠物" 卡通</td>
+          <td class="center">48 课时</td></tr>
+      <tr><td class="tag">启蒙 · L2</td><td class="center">8–10</td>
+          <td>理解 Prompt 结构与简单逻辑</td>
+          <td>个性化记单词 / 24 点 AI 出题机 / 互动绘本</td>
+          <td class="center">72 课时</td></tr>
+      <tr><td class="tag">进阶 · L3</td><td class="center">10–12</td>
+          <td>用 Vibe Coding 做能上线的小工具</td>
+          <td>班级值日机器人 / 家庭账本网站 / 个人博客</td>
+          <td class="center">96 课时</td></tr>
+      <tr><td class="tag">进阶 · L4</td><td class="center">12–14</td>
+          <td>能拆解需求、读懂代码、调试 AI 输出</td>
+          <td>校园活动报名小程序 / AI 学习助手 / 作品集站</td>
+          <td class="center">120 课时</td></tr>
+      <tr><td class="tag">挑战 · L5</td><td class="center">14–15</td>
+          <td>完成完整产品 Demo + 答辩</td>
+          <td>独立 App / Hackathon 项目 / 个人作品集</td>
+          <td class="center">144 课时</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 5.1 · 三阶五段课程体系（启蒙 → 进阶 → 挑战）</div>
+
+  <h1 class="section-title">5.2 SKU 与定价（双国对照）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:24%"><col style="width:30%"><col style="width:18%"><col style="width:18%"><col style="width:10%">
+    </colgroup>
+    <thead>
+      <tr><th>SKU</th><th>内容</th><th><span class="pill us">US</span>定价</th><th><span class="pill cn">CN</span>定价</th><th>占营收</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">体验包 (Trial)</td>
+          <td>2 节 AI 共创课 + 1 件作品 + 家长直播</td>
+          <td class="center">$ 1 / $ 9</td>
+          <td class="center">¥ 9.9 / 49</td>
+          <td class="center">引流</td></tr>
+      <tr><td class="tag">单阶段课包 (L1–L4)</td>
+          <td>对应阶段的标准课包，含作品集</td>
+          <td class="center">$ 480 – 980</td>
+          <td class="center">¥ 2,800 – 5,800</td>
+          <td class="center">~55%</td></tr>
+      <tr><td class="tag">挑战营 / Project Camp (L5)</td>
+          <td>8–12 周作品打磨 + 1:1 导师</td>
+          <td class="center">$ 980 – 1,800</td>
+          <td class="center">¥ 4,800 – 9,800</td>
+          <td class="center">~18%</td></tr>
+      <tr><td class="tag">订阅式 AI 陪学 (Monthly)</td>
+          <td>不限次 AI Tutor + 月度作业评估</td>
+          <td class="center">$ 19 / 39</td>
+          <td class="center">¥ 99 / 199</td>
+          <td class="center">~12%</td></tr>
+      <tr><td class="tag">赛事 / 作品集服务</td>
+          <td>白名单赛事 / Hackathon / 申请作品集</td>
+          <td class="center">$ 600 – 2,400</td>
+          <td class="center">¥ 3,000 – 12,000</td>
+          <td class="center">~10%</td></tr>
+      <tr><td class="tag">B 端 · School Solution</td>
+          <td>课程 + 平台 + 师训打包</td>
+          <td class="center">$ 12 – 60K / 校 / 年</td>
+          <td class="center">¥ 20 – 80 万 / 校 / 年</td>
+          <td class="center">~5%</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 5.2 · 美中双市场 SKU 蓝图（基础情景）</div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 10 页</span>
+  </div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">05 · PRODUCT &amp; CURRICULUM</span>
+  </div>
+
+  <h1 class="section-title">5.3 学员体验旅程（学员视角）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:14%"><col style="width:30%"><col style="width:56%">
+    </colgroup>
+    <thead>
+      <tr><th>阶段</th><th>触点</th><th>体验设计要点（双国通用）</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">① 触达</td>
+          <td>TikTok / 小红书 / 视频号 / Reddit / 家长群 / 学校</td>
+          <td>"我家娃做了一个真 App"风格内容矩阵，作品优先于课程。</td></tr>
+      <tr><td class="tag">② 试听</td>
+          <td>$ 1 / 9.9 元 体验包</td>
+          <td>2 节课内必须做出 1 件可分享作品；家长可同步看孩子 Prompt 过程。</td></tr>
+      <tr><td class="tag">③ 入学</td>
+          <td>AI 评测 + 1:1 学习规划</td>
+          <td>AI 评估孩子兴趣 / 表达力 / 思维方式，生成专属课程路径。</td></tr>
+      <tr><td class="tag">④ 学习</td>
+          <td>Web + App + AI Tutor + 周度直播</td>
+          <td>每节 30–40 分钟、护眼模式、AI 全程陪伴 + 真人导师周度答疑。</td></tr>
+      <tr><td class="tag">⑤ 作品</td>
+          <td>作品广场 + 家长仪表盘</td>
+          <td>每月 1 件可上线作品，家长仪表盘看到学习曲线与代码量。</td></tr>
+      <tr><td class="tag">⑥ 复购 / 推荐</td>
+          <td>阶段升级 / 推荐返券 / 赛事入口</td>
+          <td>学完一阶段自然升级；赛事 / 作品集是高粘性触发器。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 5.3 · 学员体验旅程关键触点（全球统一）</div>
+
+  <h1 class="section-title">5.4 内容安全与未成年人友好的产品红线</h1>
+  <ul class="bullets">
+    <li><b>分级内容过滤</b>：自研针对 K-12 的多层 AI 输出审核（敏感词 + 语义 + 价值观），按美 / 中 / 全球三套配置。</li>
+    <li><b>家长共管</b>：家长端可设单次时长、关键词告警、对话回放权限（中国侧默认开启，美国侧默认提示）。</li>
+    <li><b>护眼默认值</b>：单次 ≤ 30 分钟、深色模式、强制中场离屏。</li>
+    <li><b>禁用清单</b>：禁止生成涉及暴力、隐私、考试作弊、虚假信息的代码与内容；中国侧额外过滤涉政、涉黄等监管红线。</li>
+    <li><b>身份与数据隔离</b>：&lt; 13 岁强制 COPPA 流程（美），未成年人原则上数据不出境（中），全球注册逻辑独立。</li>
+  </ul>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 11 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 06 — TECH PLATFORM
+     ============================================================ -->
+<section class="page chapter-divider">
+  <div class="num">06</div>
+  <div class="rule"></div>
+  <h1>技术平台与 AI 教学架构</h1>
+  <div class="en">TECH PLATFORM &amp; AI PEDAGOGY</div>
+  <div class="kicker">从模型层、智能体层、平台层、运营层四层架构出发，给出双国部署、双模型栈的可演进技术蓝图。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">06 · TECH PLATFORM &amp; AI PEDAGOGY</span>
+  </div>
+
+  <h1 class="section-title">6.1 四层技术架构（双国双轨）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:14%"><col style="width:28%"><col style="width:29%"><col style="width:29%">
+    </colgroup>
+    <thead>
+      <tr><th>层级</th><th>核心组件</th><th><span class="pill us">US</span>选型 / 策略</th><th><span class="pill cn">CN</span>选型 / 策略</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">模型层</td>
+          <td>基础大模型 + 代码模型 + 安全审核模型</td>
+          <td>OpenAI GPT-5 / Anthropic Claude / Google Gemini，按场景路由</td>
+          <td>豆包 / 通义 / DeepSeek / Kimi（均通过备案），不调用境外模型</td></tr>
+      <tr><td class="tag">智能体层</td>
+          <td>AI Tutor、Code Reviewer、Project Coach、Safety Guard</td>
+          <td>统一 Agent 编排框架（自研 / LangGraph）+ 英文 Prompt</td>
+          <td>同一框架 + 中文 Prompt + 国情化价值观对齐</td></tr>
+      <tr><td class="tag">平台层</td>
+          <td>Web + App + 沙箱、家长仪表盘、作品广场</td>
+          <td>AWS us-east-1 / us-west-2，CloudFront 全球分发</td>
+          <td>阿里云 / 腾讯云华东节点，独立网关与 ICP 备案</td></tr>
+      <tr><td class="tag">运营层</td>
+          <td>CRM、增长归因、内容审核工作台</td>
+          <td>HubSpot + Mixpanel + Stripe + Intercom</td>
+          <td>纷享销客 / 神策数据 + 微信支付 + 企微 SCRM</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 6.1 · 四层技术架构（双国双轨部署）</div>
+
+  <h1 class="section-title">6.2 AI Tutor 能力地图</h1>
+  <ul class="bullets">
+    <li><b>诊断 (Diagnose)</b>：基于学员 Prompt + 作品输出，识别困惑类型（语法、逻辑、表达）。</li>
+    <li><b>引导 (Guide)</b>：用苏格拉底式提问推动学员自己想下一步，避免直接给答案。</li>
+    <li><b>反馈 (Feedback)</b>：每件作品自动生成 3 项优点 + 2 项改进 + 1 项延伸挑战。</li>
+    <li><b>调度 (Adapt)</b>：根据学习曲线动态调整难度，连续受挫触发真人介入。</li>
+    <li><b>陪伴 (Companion)</b>：基于角色化人设保持长期一致性，建立学员的"老朋友"感。</li>
+  </ul>
+
+  <h1 class="section-title">6.3 单位推理成本（指示性，2026 年市场价）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:30%"><col style="width:18%"><col style="width:26%"><col style="width:26%">
+    </colgroup>
+    <thead>
+      <tr><th>情景</th><th>Token / 课时</th><th><span class="pill us">US</span>单课时模型成本</th><th><span class="pill cn">CN</span>单课时模型成本</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">启蒙阶段</td><td class="center">~25K</td>
+          <td class="center">~$ 0.04</td><td class="center">~¥ 0.013</td></tr>
+      <tr><td class="tag">进阶阶段</td><td class="center">~80K</td>
+          <td class="center">~$ 0.32</td><td class="center">~¥ 0.12</td></tr>
+      <tr><td class="tag">挑战阶段（含代码模型）</td><td class="center">~200K</td>
+          <td class="center">~$ 1.20</td><td class="center">~¥ 0.60</td></tr>
+      <tr><td class="tag">订阅式 AI 陪学 (月)</td><td class="center">~4M</td>
+          <td class="center">~$ 18</td><td class="center">~¥ 6.0</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 6.2 · AI 推理成本测算（中美双市场）</div>
+
+  <div class="callout">
+    推理成本占课程毛利不足 4%（中国），美国侧因调用前沿模型成本略高但仍 &lt; 8%——AI 是体验差异化的"性价比抓手"，不是 P&L 的负担。
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 12 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 07 — OPERATING MODEL
+     ============================================================ -->
+<section class="page chapter-divider">
+  <div class="num">07</div>
+  <div class="rule"></div>
+  <h1>运营模式与双总部组织架构</h1>
+  <div class="en">OPERATING MODEL &amp; DUAL HQ</div>
+  <div class="kicker">聚焦交付、师资与组织设计，给出 Day-1 可落地的双总部运营框架。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">07 · OPERATING MODEL &amp; DUAL HQ</span>
+  </div>
+
+  <h1 class="section-title">7.1 双总部 + 单全球产品的组织设计</h1>
+  <p>我们建议采用"<b>双总部、单产品、本地化运营</b>"的组织设计：</p>
+  <div class="dual">
+    <div class="col us">
+      <h4><span class="pill us">US</span>美国总部 · San Francisco / NYC</h4>
+      <ul>
+        <li>承载：CEO、全球产品、AI Engineering、品牌、资本对接</li>
+        <li>团队规模 Y1：约 28 人</li>
+        <li>角色：产品母舰 + 资本母舰 + 全球品牌 IP 中心</li>
+        <li>对外身份：Delaware C-Corp，融资主体</li>
+      </ul>
+    </div>
+    <div class="col cn">
+      <h4><span class="pill cn">CN</span>中国总部 · 北京 / 上海</h4>
+      <ul>
+        <li>承载：中国 GM、教研、增长、班主任、合规、本地工程</li>
+        <li>团队规模 Y1：约 32 人</li>
+        <li>角色：规模引擎 + 现金流主场 + 工程红利</li>
+        <li>对外身份：境内独资公司 + WFOE / VIE 结构（视融资计划）</li>
+      </ul>
+    </div>
+  </div>
+
+  <h1 class="section-title">7.2 三种交付形态（双国适配）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:32%"><col style="width:14%"><col style="width:18%"><col style="width:18%"><col style="width:8%"><col style="width:10%">
+    </colgroup>
+    <thead>
+      <tr><th>形态</th><th>师生比</th><th><span class="pill us">US</span>客单</th><th><span class="pill cn">CN</span>客单</th><th>毛利</th><th>阶段</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">AI 全程陪学（自主学习为主）</td>
+          <td class="center">1: 200+</td>
+          <td class="center">$ 480 – 980</td>
+          <td class="center">¥ 2,800 – 5,800</td>
+          <td class="center">70%</td>
+          <td class="center">L1–L3</td></tr>
+      <tr><td class="tag">AI + 真人小班直播</td>
+          <td class="center">1: 12</td>
+          <td class="center">$ 980 – 1,800</td>
+          <td class="center">¥ 5,800 – 9,800</td>
+          <td class="center">55%</td>
+          <td class="center">L3–L4</td></tr>
+      <tr><td class="tag">AI + 1:1 导师项目营</td>
+          <td class="center">1: 6</td>
+          <td class="center">$ 1,800 – 3,200</td>
+          <td class="center">¥ 9,800 – 14,800</td>
+          <td class="center">45%</td>
+          <td class="center">L4–L5</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 7.1 · 三种交付形态（首年以前两种为主）</div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 13 页</span>
+  </div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">07 · OPERATING MODEL &amp; DUAL HQ</span>
+  </div>
+
+  <h1 class="section-title">7.3 首年组织架构（合计约 60 人）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:24%"><col style="width:14%"><col style="width:14%"><col style="width:48%">
+    </colgroup>
+    <thead>
+      <tr><th>职能</th><th><span class="pill us">US</span>编制</th><th><span class="pill cn">CN</span>编制</th><th>关键职责</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">领导层</td><td class="center">3</td><td class="center">2</td>
+          <td>CEO（US）、CTO（US）、Chief Pedagogy（US）、China GM、China Ops Head</td></tr>
+      <tr><td class="tag">产品 &amp; 设计</td><td class="center">5</td><td class="center">3</td>
+          <td>全球产品负责美国，本地化交互在中国小团队适配。</td></tr>
+      <tr><td class="tag">AI 工程 &amp; 智能体</td><td class="center">7</td><td class="center">4</td>
+          <td>核心 AI Tutor 在 US 自研，CN 团队负责国产模型适配与微调。</td></tr>
+      <tr><td class="tag">技术平台</td><td class="center">4</td><td class="center">5</td>
+          <td>跨国通用平台 + 各自数据栈与运维。</td></tr>
+      <tr><td class="tag">教研 &amp; 课程</td><td class="center">3</td><td class="center">5</td>
+          <td>全球教学法在 US 设计，本地化由 CN 教研团队适配（双语作品库）。</td></tr>
+      <tr><td class="tag">班主任 &amp; 教学服务</td><td class="center">2</td><td class="center">6</td>
+          <td>美国轻服务，中国侧重私域与陪伴。</td></tr>
+      <tr><td class="tag">增长 &amp; 内容</td><td class="center">3</td><td class="center">5</td>
+          <td>美国侧 TikTok / Reddit / Apple Search Ads；中国侧小红书 / 视频号 / 私域。</td></tr>
+      <tr><td class="tag">合规 &amp; 内容审核</td><td class="center">1</td><td class="center">2</td>
+          <td>美国侧 COPPA / FERPA / 州法；中国侧 PIPL / 备案 / 内容审核。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 7.2 · 首年组织架构（US 28 + CN 32，合计约 60 人）</div>
+
+  <div class="callout">
+    组织设计原则：<b>产品全球统一、教学法全球统一、合规与运营本地化</b>。两个总部直接对齐到创始人 / CEO 一人，避免出现"中美互相协调"的内耗。
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 14 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 08 — GROWTH
+     ============================================================ -->
+<section class="page chapter-divider">
+  <div class="num">08</div>
+  <div class="rule"></div>
+  <h1>获客与增长策略</h1>
+  <div class="en">MARKETING &amp; GROWTH</div>
+  <div class="kicker">基于"内容为本、私域沉淀、口碑驱动"的原则，构建 US-first → CN 并行的增长路径。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">08 · MARKETING &amp; GROWTH</span>
+  </div>
+
+  <h1 class="section-title">8.1 阶段性增长路径（24 个月）</h1>
+  <ul class="bullets">
+    <li><b>0–3 月（US 蓄水）</b>：完成英文品牌、官网、Product Hunt + Reddit 种子用户、5,000 个内测家庭，重内容轻投放，CAC 控制在 $ 35 以内。</li>
+    <li><b>3–6 月（US 启动）</b>：体验包付费转化跑通，TikTok / IG / YouTube 三路并行，月新增付费 1,500 单，CAC 上限 $ 100。中国侧 Wave 2 团队组建。</li>
+    <li><b>6–12 月（US 规模化 + CN 启动）</b>：美国月新增 4,000 单，CAC $ 130；中国 MVP 上线，1,000 内测家庭，重小红书 / 视频号 / 家长群。</li>
+    <li><b>12–18 月（双国并行）</b>：美国月新增 6,000 单，进入 K-12 学校 PoC（10 所）；中国月新增 5,000 单，启动 B 端公立校 PoC（5 所）。</li>
+    <li><b>18–24 月（口碑飞轮 + Wave 3 储备）</b>：合并老带新占比 ≥ 35%，LTV/CAC ≥ 4.5×；同步启动英国 / 加拿大 / 新加坡市场试水。</li>
+  </ul>
+
+  <h1 class="section-title">8.2 双国渠道矩阵</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:18%"><col style="width:41%"><col style="width:41%">
+    </colgroup>
+    <thead>
+      <tr><th>渠道类型</th><th><span class="pill us">US</span>主要打法</th><th><span class="pill cn">CN</span>主要打法</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">短视频</td>
+          <td>TikTok / IG Reels / YouTube Shorts："My kid built X with AI" 内容矩阵 + 家长 KOL</td>
+          <td>抖音 / 视频号："我家娃做了一个真 App" + 家长 KOL + 信息流</td></tr>
+      <tr><td class="tag">社区 / 种草</td>
+          <td>Reddit r/Parenting, r/HomeschoolRecovery, r/AIparenting；Hacker News；Product Hunt</td>
+          <td>小红书 + 家长社群 + 知乎家长话题</td></tr>
+      <tr><td class="tag">私域 / CRM</td>
+          <td>Email 列表 + Discord 家长社区 + Apple / Google 推送</td>
+          <td>企业微信社群 + 公众号 + 视频号 + 朋友圈</td></tr>
+      <tr><td class="tag">付费投放</td>
+          <td>Apple Search Ads + Meta + Google + TikTok Ads</td>
+          <td>巨量引擎 + 微信广告 + 小红书广告 + 知乎</td></tr>
+      <tr><td class="tag">赛事 / 学校</td>
+          <td>Code.org Hour of Code、Congressional App Challenge、AP CSP 衔接</td>
+          <td>白名单赛事、信息素养测评、5+2 课后服务采购</td></tr>
+      <tr><td class="tag">跨界合作</td>
+          <td>Scholastic、博物馆、青少年杂志、家庭硬件品牌</td>
+          <td>童书出版社、博物馆、科技馆、家庭硬件品牌</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 8.1 · 美中双市场渠道矩阵</div>
+
+  <h1 class="section-title">8.3 单位经济模型（基础情景，合并）</h1>
+  <div class="kpi-strip">
+    <div class="kpi"><div class="label">CAC · 平均获客成本</div><div class="num">$ 95 / ¥ 600</div><div class="sub">合并加权，US ≈ $ 130，CN ≈ ¥ 600</div></div>
+    <div class="kpi"><div class="label">AOV · 平均客单价</div><div class="num">$ 720 / ¥ 4,800</div><div class="sub">含全 SKU 加权（不含 B 端）</div></div>
+    <div class="kpi"><div class="label">GM · 毛利率</div><div class="num">60%</div><div class="sub">含交付、师资、模型与平台成本</div></div>
+    <div class="kpi"><div class="label">LTV / CAC</div><div class="num">4.5×</div><div class="sub">基于 65% 续费率与 2 年期估算</div></div>
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 15 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 09 — FINANCIALS
+     ============================================================ -->
+<section class="page chapter-divider">
+  <div class="num">09</div>
+  <div class="rule"></div>
+  <h1>财务测算与回报情景</h1>
+  <div class="en">FINANCIALS &amp; RETURNS</div>
+  <div class="kicker">给出三套情景下的投资、营收、成本与回报指引。所有数字均为指示性，仅供决策参考。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">09 · FINANCIALS &amp; RETURNS</span>
+  </div>
+
+  <h1 class="section-title">9.1 一次性 + 首年投入（CapEx + Y1 OpEx 启动包）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:28%"><col style="width:14%"><col style="width:14%"><col style="width:14%"><col style="width:30%">
+    </colgroup>
+    <thead>
+      <tr><th>科目</th><th><span class="pill us">US</span>$ M</th><th><span class="pill cn">CN</span>¥ 万</th><th>合计 $ M</th><th>说明</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">产品 &amp; 平台研发</td>
+          <td class="center">2.6 – 3.4</td><td class="center">800 – 1,100</td><td class="center">3.7 – 4.9</td>
+          <td>App、AI Tutor、家长端、编辑器与沙箱的首年研发人力。</td></tr>
+      <tr><td class="tag">AI 模型推理与微调</td>
+          <td class="center">0.4 – 0.6</td><td class="center">120 – 180</td><td class="center">0.6 – 0.9</td>
+          <td>双国多供应商 API + 小模型微调试验。</td></tr>
+      <tr><td class="tag">教研与课程</td>
+          <td class="center">0.6 – 0.9</td><td class="center">300 – 450</td><td class="center">1.0 – 1.5</td>
+          <td>五阶段课程体系 + 100+ 作品模板 + 教师手册（双语）。</td></tr>
+      <tr><td class="tag">品牌 / 内容 / 冷启动获客</td>
+          <td class="center">2.0 – 3.0</td><td class="center">400 – 600</td><td class="center">2.5 – 3.8</td>
+          <td>VI、官网、内容矩阵、前 6 个月获客投放预算。</td></tr>
+      <tr><td class="tag">运营团队首年人力</td>
+          <td class="center">2.4 – 3.2</td><td class="center">500 – 700</td><td class="center">3.1 – 4.2</td>
+          <td>班主任、教学服务、增长、内容审核。</td></tr>
+      <tr><td class="tag">合规 &amp; 法律</td>
+          <td class="center">0.4 – 0.6</td><td class="center">60 – 100</td><td class="center">0.5 – 0.7</td>
+          <td>COPPA / FERPA / 州法 + 中国备案与合规审计。</td></tr>
+      <tr><td class="tag">备用金 &amp; 行政</td>
+          <td class="center">0.6 – 0.9</td><td class="center">120 – 200</td><td class="center">0.8 – 1.2</td>
+          <td>15% 弹性预算、办公租赁、IT 设备等。</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td>合计（中位）</td>
+          <td class="center">~$ 11.5 M</td>
+          <td class="center">~¥ 2,800 万</td>
+          <td class="center">~$ 15.5 M</td>
+          <td>建议 Pre-Seed + Seed 总融资规模 $ 18–22 M</td></tr>
+    </tfoot>
+  </table>
+  <div class="caption">表 9.1 · 双国一次性 + 首年投入估算（指示性，按 1 USD = 7 CNY 折算）</div>
+
+  <h1 class="section-title">9.2 三情景营收预测（稳态期 · Y3，合并）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:14%"><col style="width:13%"><col style="width:13%"><col style="width:13%"><col style="width:13%"><col style="width:13%"><col style="width:21%">
+    </colgroup>
+    <thead>
+      <tr><th>情景</th>
+          <th><span class="pill us">US</span>付费学员</th>
+          <th><span class="pill cn">CN</span>付费学员</th>
+          <th>合计学员</th>
+          <th>合并营收</th>
+          <th>毛利</th>
+          <th>净利率</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">保守</td>
+          <td class="center">3 万</td><td class="center">3 万</td>
+          <td class="center">6 万</td>
+          <td class="center">$ 38 M</td><td class="center">52%</td>
+          <td class="center">5 – 8%</td></tr>
+      <tr><td class="tag">基础</td>
+          <td class="center">8 万</td><td class="center">7 万</td>
+          <td class="center">15 万</td>
+          <td class="center">$ 95 M ≈ ¥ 6.8 亿</td><td class="center">60%</td>
+          <td class="center">15 – 22%</td></tr>
+      <tr><td class="tag">乐观</td>
+          <td class="center">15 万</td><td class="center">14 万</td>
+          <td class="center">29 万</td>
+          <td class="center">$ 195 M</td><td class="center">64%</td>
+          <td class="center">22 – 28%</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 9.2 · 三情景稳态期营收与利润率（Y3）</div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 16 页</span>
+  </div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">09 · FINANCIALS &amp; RETURNS</span>
+  </div>
+
+  <h1 class="section-title">9.3 回报指标（合并基础情景）</h1>
+  <div class="kpi-strip">
+    <div class="kpi"><div class="label">PAYBACK · 回收期</div><div class="num">22–30 月</div><div class="sub">含 6 个月美国 MVP 期</div></div>
+    <div class="kpi"><div class="label">IRR · 内部回报率</div><div class="num">32–40%</div><div class="sub">5 年期、不含战略并购溢价</div></div>
+    <div class="kpi"><div class="label">BREAKEVEN · 盈亏平衡</div><div class="num">Y2 H2</div><div class="sub">合并基础情景 / 月营收 ≈ $ 4.5 M</div></div>
+    <div class="kpi"><div class="label">Renewal · 年续费率</div><div class="num">≥ 65%</div><div class="sub">稳态期目标</div></div>
+  </div>
+
+  <h1 class="section-title">9.4 三年现金流粗略路径（基础情景，$ M）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:10%"><col style="width:18%"><col style="width:18%"><col style="width:18%"><col style="width:18%"><col style="width:18%">
+    </colgroup>
+    <thead>
+      <tr><th>年度</th><th>营收</th><th>毛利</th><th>S&amp;O 费用</th><th>研发与平台</th><th>经营现金流</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">Y1</td>
+          <td class="center">~$ 12 M</td>
+          <td class="center">~$ 6 M</td>
+          <td class="center">~$ 14 M</td>
+          <td class="center">~$ 11 M</td>
+          <td class="center">~ -$ 19 M</td></tr>
+      <tr><td class="tag">Y2</td>
+          <td class="center">~$ 42 M</td>
+          <td class="center">~$ 24 M</td>
+          <td class="center">~$ 22 M</td>
+          <td class="center">~$ 9 M</td>
+          <td class="center">~ -$ 7 M</td></tr>
+      <tr><td class="tag">Y3</td>
+          <td class="center">~$ 95 M</td>
+          <td class="center">~$ 57 M</td>
+          <td class="center">~$ 28 M</td>
+          <td class="center">~$ 11 M</td>
+          <td class="center">~ +$ 18 M</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 9.3 · 三年合并经营现金流粗略路径（基础情景，$ M）</div>
+
+  <h1 class="section-title">9.5 融资节奏建议</h1>
+  <ul class="bullets">
+    <li><b>Pre-Seed · M0</b>：$ 3 – 5 M，硅谷 AI / EdTech 早期基金，CEO + 产品母团队。</li>
+    <li><b>Seed · M6</b>：$ 12 – 18 M，美国市场跑通 MVP 数据 + 中国团队组建后启动。</li>
+    <li><b>Series A · M18</b>：$ 35 – 50 M，双国营收跑通后扩张 Wave 3。</li>
+    <li><b>建议结构</b>：Delaware C-Corp 为母公司主体，中国子公司通过 WFOE 持有；后续视监管动态评估 VIE 必要性。</li>
+  </ul>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 17 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 10 — RISK
+     ============================================================ -->
+<section class="page chapter-divider">
+  <div class="num">10</div>
+  <div class="rule"></div>
+  <h1>风险矩阵与跨境合规要点</h1>
+  <div class="en">RISK &amp; CROSS-BORDER COMPLIANCE</div>
+  <div class="kicker">识别核心风险并给出缓释措施，重点强调跨境数据、未成年人保护与 AI 内容安全。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">10 · RISK &amp; COMPLIANCE</span>
+  </div>
+
+  <h1 class="section-title">10.1 风险矩阵（概率 × 影响）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:26%"><col style="width:11%"><col style="width:11%"><col style="width:52%">
+    </colgroup>
+    <thead>
+      <tr><th>风险</th><th>概率</th><th>影响</th><th>缓释措施</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">巨头入局压价（OpenAI / Anthropic / 字节 / 腾讯）</td>
+          <td class="center">高</td><td class="center">高</td>
+          <td>用 12–18 个月窗口期建立教学法、数据飞轮与口碑壁垒；提前规划战略合作 / 并购退出。</td></tr>
+      <tr><td class="tag">美中地缘政治升级（数据 / 资本 / 产品）</td>
+          <td class="center">中—高</td><td class="center">高</td>
+          <td>双国独立法人 + 独立数据栈 + 独立模型栈；架构层面"任一边断电不影响另一边"。</td></tr>
+      <tr><td class="tag">未成年人监管收紧（COPPA / PIPL / 时长 / 内容）</td>
+          <td class="center">中—高</td><td class="center">高</td>
+          <td>设独立合规岗、最严标准实现、与监管常态化沟通。</td></tr>
+      <tr><td class="tag">AI 内容安全事故</td>
+          <td class="center">中</td><td class="center">高</td>
+          <td>多层审核（前置过滤 + 模型层 + 后置审核）+ 事件分级响应预案。</td></tr>
+      <tr><td class="tag">家长付费动力不足 / 续费率低</td>
+          <td class="center">中</td><td class="center">高</td>
+          <td>家长仪表盘、阶段性作品答辩、白名单赛事衔接；持续做"看得见的进步"。</td></tr>
+      <tr><td class="tag">汇率波动 / 资金跨境流转受限</td>
+          <td class="center">中</td><td class="center">中</td>
+          <td>美元为主结算币种；中国营收原币结算并就地再投资，减少跨境调拨需求。</td></tr>
+      <tr><td class="tag">数据泄露 / 未成年人隐私事件</td>
+          <td class="center">低</td><td class="center">极高</td>
+          <td>数据最小化、密文存储、年度第三方安全审计、应急公关预案。</td></tr>
+      <tr><td class="tag">教研 / 师资 / AI 工程团队流失</td>
+          <td class="center">中</td><td class="center">中</td>
+          <td>股权激励 + 体系化课程模板 + 远程协作机制，降低对个人的依赖。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 10.1 · 主要风险与缓释措施</div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 18 页</span>
+  </div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">10 · RISK &amp; COMPLIANCE</span>
+  </div>
+
+  <h1 class="section-title">10.2 跨境合规清单（上线前必须完成）</h1>
+  <div class="dual">
+    <div class="col us">
+      <h4><span class="pill us">US</span>美国合规清单</h4>
+      <ul>
+        <li><b>COPPA</b>（&lt; 13 岁）：可验证家长同意（VPC）流程、数据收集最小化。</li>
+        <li><b>FERPA</b>（学校采购）：与学区合同条款、教育记录处理。</li>
+        <li><b>各州法</b>：CA SOPIPA、IL SOPPA、NY Ed Law 2-d 等关键州专项合规。</li>
+        <li><b>SOC 2 Type II</b>：进入校园采购的事实门槛。</li>
+        <li><b>GenAI Disclosure</b>：与 OpenAI / Anthropic 等的 EDU 合规通道，明确不用未成年人数据训练。</li>
+        <li><b>Apple App Store / Google Play</b>：Kids 类目合规、家庭分享、Apple Family / Family Link 集成。</li>
+      </ul>
+    </div>
+    <div class="col cn">
+      <h4><span class="pill cn">CN</span>中国合规清单</h4>
+      <ul>
+        <li><b>办学 / 经营资质</b>：根据业态匹配非学科类校外培训资质或 ICP / EDI 备案。</li>
+        <li><b>教育移动应用备案</b>：教育部"教育移动互联网应用程序备案"。</li>
+        <li><b>未成年人个人信息</b>：PIPL 专项条款、家长知情同意、数据本地化。</li>
+        <li><b>生成式 AI 服务备案</b>：算法 / 内容备案 + 安全评估。</li>
+        <li><b>内容审核机制</b>："事前过滤 + 事中拦截 + 事后回查"三层链路。</li>
+        <li><b>未成年人防沉迷</b>：单次 / 单日时长限制、21:00 后弹窗、家长一键暂停。</li>
+        <li><b>广告与营销红线</b>：避免承诺升学、避免使用未成年人形象代言、避免诱导付费。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="caption">表 10.2 · 美中跨境合规清单</div>
+
+  <div class="callout">
+    跨境合规设计原则：<b>"双轨架构、按最严标准实现、各市场独立合规审计"</b>。这是跨境 K-12 AI 产品 Day-1 必须做对的事——后期补合规的代价是停服。
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 19 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 11 — ROADMAP
+     ============================================================ -->
+<section class="page chapter-divider">
+  <div class="num">11</div>
+  <div class="rule"></div>
+  <h1>三波次实施路线图</h1>
+  <div class="en">3-WAVE IMPLEMENTATION ROADMAP</div>
+  <div class="kicker">以季度为颗粒度，给出从 US 立项到 CN 并行、再到 Wave 3 全球辐射的关键里程碑。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">11 · 3-WAVE ROADMAP</span>
+  </div>
+
+  <h1 class="section-title">11.1 24 个月里程碑甘特</h1>
+  <table class="gantt">
+    <thead>
+      <tr><th>阶段 / 季度</th>
+          <th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th>
+          <th>Q5</th><th>Q6</th><th>Q7</th><th>Q8</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>US · 立项 / 招募 / 用户研究</td>
+          <td class="bar us">·</td><td></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>US · MVP + AI Tutor</td>
+          <td class="bar us">·</td><td class="bar us">·</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>US · 5,000 内测家庭</td>
+          <td></td><td class="bar us">·</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>US · 体验包付费上线</td>
+          <td></td><td></td><td class="bar us">·</td>
+          <td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>US · 正式商业化 + 扩张</td>
+          <td></td><td></td><td class="bar us">·</td><td class="bar us">·</td>
+          <td class="bar us">·</td><td class="bar us">·</td><td class="bar us">·</td><td class="bar us">·</td></tr>
+      <tr><td>CN · 团队组建 / 合规启动</td>
+          <td></td><td class="bar cn">·</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>CN · MVP 国产模型适配</td>
+          <td></td><td></td><td class="bar cn">·</td>
+          <td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>CN · 1,000 家庭内测</td>
+          <td></td><td></td><td></td><td class="bar cn">·</td>
+          <td></td><td></td><td></td><td></td></tr>
+      <tr><td>CN · 体验包付费 + 投放</td>
+          <td></td><td></td><td></td><td class="bar cn">·</td>
+          <td class="bar cn">·</td><td></td><td></td><td></td></tr>
+      <tr><td>CN · 正式商业化 + B 端 PoC</td>
+          <td></td><td></td><td></td><td></td>
+          <td class="bar cn">·</td><td class="bar cn">·</td><td class="bar cn">·</td><td class="bar cn">·</td></tr>
+      <tr><td>Wave 3 · 英国 / 加 / 新</td>
+          <td></td><td></td><td></td><td></td>
+          <td></td><td></td><td class="bar gl">·</td><td class="bar gl">·</td></tr>
+      <tr><td>Wave 3 · 东南亚试水</td>
+          <td></td><td></td><td></td><td></td>
+          <td></td><td></td><td></td><td class="bar gl">·</td></tr>
+    </tbody>
+  </table>
+  <div class="gantt-legend">
+    <span><span class="sw us"></span>WAVE 1 · US</span>
+    <span><span class="sw cn"></span>WAVE 2 · CN</span>
+    <span><span class="sw gl"></span>WAVE 3 · 全球</span>
+  </div>
+  <div class="caption">表 11.1 · 24 个月里程碑甘特（Q = 季度，按颜色区分主战场）</div>
+
+  <h1 class="section-title">11.2 关键 Go / No-Go 决策点</h1>
+  <ul class="bullets">
+    <li><b>Q2 末 (M6)</b>：US MVP 跑通、内测家庭 NPS ≥ 40、完课率 ≥ 70% → Go/No-Go #1（决定中国是否同步启动）</li>
+    <li><b>Q4 末 (M12)</b>：US 月新增付费 ≥ 4,000 单、LTV/CAC ≥ 3.0× → Go/No-Go #2（决定 Series A 启动）</li>
+    <li><b>Q6 末 (M18)</b>：CN 累计付费学员 ≥ 5 万 + B 端 PoC 落地 3 所 → Go/No-Go #3（决定 Wave 3 是否激活）</li>
+    <li><b>Q8 末 (M24)</b>：合并营收 ≥ $ 40 M / 年化 → 进入 Series A 启动 / 战略评估</li>
+  </ul>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 20 页</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 12 — CONCLUSION
+     ============================================================ -->
+<section class="page chapter-divider">
+  <div class="num">12</div>
+  <div class="rule"></div>
+  <h1>结论与下一步建议</h1>
+  <div class="en">CONCLUSION &amp; NEXT STEPS</div>
+  <div class="kicker">总结判断并给出推进项目所需的下一步具体动作。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">K-12 AI · Vibe Coding · Global Product Line Feasibility</span>
+    <span class="h-right">12 · CONCLUSION &amp; NEXT STEPS</span>
+  </div>
+
+  <h1 class="section-title">总体结论</h1>
+  <p>基于对宏观政策、市场需求、行业格局与财务可行性的系统分析，我们的总体判断是：<b>本项目处于历史罕见的"美中政策双窗口 + AI 技术双轨成熟 + 家长焦虑同源"的黄金机会，建议立项推进，并以"美国先行 → 中国并行 → 全球辐射"的三波次节奏执行</b>。</p>
+  <p>本项目的护城河来自"教学法 × 产品工程 × 数据飞轮 × 双国架构"四者的复合。面对潜在的巨头入局，我们窗口期约为 12–18 个月，必须在双国同时用极致的产品迭代与作品口碑迅速建立用户心智壁垒。只要在产品、教研、合规、增长四个维度保持高执行力，本项目可以在 Y3 实现合并营收 $ 95 M（≈ ¥ 6.8 亿）、净利率 15%+，并具备美股 / 港股 / 战略并购退出的多元路径。</p>
+
+  <h1 class="section-title">90 天关键动作清单</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:8%"><col style="width:50%"><col style="width:24%"><col style="width:18%">
+    </colgroup>
+    <thead>
+      <tr><th>编号</th><th>动作</th><th>责任方</th><th>截止</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag center">01</td>
+          <td>美国母团队搭建：CEO、CTO、Chief Pedagogy、AI Eng Lead 到位。</td>
+          <td class="center">创始人</td>
+          <td class="center">30 天内</td></tr>
+      <tr><td class="tag center">02</td>
+          <td>完成 30 组美国家长 + 30 组中国家长深度访谈，验证 PMF 假设。</td>
+          <td class="center">产品 + 用研</td>
+          <td class="center">30 天内</td></tr>
+      <tr><td class="tag center">03</td>
+          <td>双国合规预审：COPPA/FERPA 路径锁定 + 中国教育 App 备案 / 生成式 AI 备案路径锁定。</td>
+          <td class="center">合规顾问 (US+CN)</td>
+          <td class="center">45 天内</td></tr>
+      <tr><td class="tag center">04</td>
+          <td>完成 L1 启蒙阶段课程原型 + 10 件双语标杆作品 Demo。</td>
+          <td class="center">教研团队</td>
+          <td class="center">60 天内</td></tr>
+      <tr><td class="tag center">05</td>
+          <td>AI Tutor 与作品沙箱 MVP 上线（英文版优先），首批 200 名美国内测家庭灰度。</td>
+          <td class="center">AI 工程 + 平台</td>
+          <td class="center">75 天内</td></tr>
+      <tr><td class="tag center">06</td>
+          <td>美国品牌命名、VI、官网、Reddit / Discord 社群、TikTok 内容矩阵首批 30 条上线。</td>
+          <td class="center">品牌 + 内容</td>
+          <td class="center">90 天内</td></tr>
+      <tr><td class="tag center">07</td>
+          <td>中国法人主体、WFOE 结构、初始合规框架与团队招募启动。</td>
+          <td class="center">CEO + China GM</td>
+          <td class="center">90 天内</td></tr>
+      <tr><td class="tag center">08</td>
+          <td>完成正式商业计划书 + Pre-Seed 轮融资沟通（目标 $ 3 – 5 M）。</td>
+          <td class="center">创始人 + 顾问</td>
+          <td class="center">90 天内</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 12.1 · 推进项目所需的 90 天关键动作（双国并行）</div>
+
+  <div class="callout">
+    "Let every child have their first AI creation companion."<br>
+    "让每一个孩子都拥有自己的第一个 AI 创造伙伴——我们建议把这件事做成一个真正属于这个时代、属于全球家庭的产品。"
+  </div>
+
+  <div class="end-mark">— 报 告 完  ·  END OF REPORT —</div>
+
+  <div class="footer-bar">
+    <span>© 2026 East Coast Advisory · 机密</span>
+    <span>K-12 AI · Vibe Coding · Global</span>
+    <span>第 21 页</span>
+  </div>
+</section>
+
+</body>
+</html>
