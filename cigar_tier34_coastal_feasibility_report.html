@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>三四线沿海城市雪茄吧可行性研究报告（通用版） · 钛耀咨询</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+@page :first { margin: 0; }
+
+:root {
+  --navy:        #0B1E3F;
+  --navy-light:  #1F3A66;
+  --navy-soft:   #25497E;
+  --gold:        #B8862B;
+  --gold-light:  #E8C77A;
+  --gold-soft:   #F6ECCF;
+  --grey-900:    #1F1F1F;
+  --grey-700:    #3A3A3A;
+  --grey-500:    #6B6B6B;
+  --grey-300:    #C9C9C9;
+  --grey-200:    #E5E5E5;
+  --grey-100:    #F2F2F2;
+  --grey-50:     #FAFAFA;
+  --white:       #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  font-family: "Source Han Serif SC", "Noto Serif CJK SC",
+               "Songti SC", "STSong", "SimSun", "Microsoft YaHei", serif;
+  font-size: 10.5pt;
+  line-height: 1.75;
+  color: var(--grey-900);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Source Han Sans SC", "Noto Sans CJK SC",
+               "PingFang SC", "Microsoft YaHei", "SimHei", sans-serif;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.35;
+}
+
+p { margin: 0 0 8px 0; text-align: justify; }
+b, strong { color: var(--navy); font-weight: 700; }
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 22mm 18mm 22mm 18mm;
+  margin: 0 auto 8mm auto;
+  background: var(--white);
+  page-break-after: always;
+  position: relative;
+  overflow: hidden;
+}
+.page:last-child { page-break-after: auto; }
+
+@media print {
+  body { background: white; }
+  .page { margin: 0; padding: 22mm 18mm; box-shadow: none; }
+}
+
+@media screen {
+  body { background: #DDD; padding: 16px 0; }
+  .page { box-shadow: 0 4px 18px rgba(0,0,0,0.18); }
+}
+
+.body-page { padding-top: 28mm; padding-bottom: 22mm; }
+.body-page::before {
+  content: ""; position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 14mm; background: var(--navy);
+}
+.body-page .header-bar {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 14mm; padding: 0 18mm;
+  display: flex; justify-content: space-between; align-items: center;
+  color: var(--white);
+}
+.body-page .header-bar .h-left {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 9pt; font-weight: 700; letter-spacing: 0.5px;
+}
+.body-page .header-bar .h-right {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 8pt; color: var(--gold-light); letter-spacing: 1.5px;
+}
+.body-page::after {
+  content: ""; position: absolute;
+  top: 14mm; left: 0; right: 0;
+  height: 1mm; background: var(--gold);
+}
+.body-page .footer-bar {
+  position: absolute; bottom: 10mm; left: 18mm; right: 18mm;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 8pt; color: var(--grey-500);
+  border-top: 0.5pt solid var(--grey-200); padding-top: 4mm;
+}
+
+.cover {
+  background: var(--navy);
+  color: var(--white);
+  padding: 28mm 22mm 22mm 22mm;
+  display: flex; flex-direction: column;
+}
+.cover::before {
+  content: ""; position: absolute;
+  left: 0; top: 56%;
+  width: 62%; height: 18mm;
+  background: var(--gold);
+  transform: skewY(-4deg);
+  transform-origin: left center;
+}
+.cover .brand {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 11pt; font-weight: 700; letter-spacing: 2px;
+  color: var(--gold);
+  border-top: 2pt solid var(--gold);
+  padding-top: 6mm; width: 70mm;
+}
+.cover .kicker {
+  margin-top: 70mm;
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 11pt; letter-spacing: 6px;
+  color: var(--gold); font-weight: 700;
+}
+.cover h1 {
+  font-size: 34pt; line-height: 1.2;
+  color: var(--white); margin-top: 6mm;
+  position: relative; z-index: 2;
+}
+.cover .subtitle {
+  margin-top: 8mm;
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 14pt; color: var(--gold-light);
+  font-weight: 400; letter-spacing: 1px;
+}
+.cover .meta {
+  margin-top: auto;
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 9.5pt; color: var(--white);
+  line-height: 1.9; opacity: 0.9;
+}
+.cover .footer-meta {
+  margin-top: 14mm;
+  display: flex; justify-content: space-between;
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 8pt; color: var(--gold-light); letter-spacing: 1.5px;
+  border-top: 0.5pt solid rgba(255,255,255,0.25);
+  padding-top: 5mm;
+}
+
+.chapter-divider {
+  display: flex; flex-direction: column;
+  justify-content: center; padding-left: 28mm;
+}
+.chapter-divider .num {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 84pt; font-weight: 800;
+  color: var(--gold); line-height: 1;
+  margin-bottom: 4mm;
+}
+.chapter-divider .rule {
+  width: 38mm; height: 2.4pt;
+  background: var(--gold); margin-bottom: 8mm;
+}
+.chapter-divider h1 {
+  font-size: 28pt; color: var(--navy); margin-bottom: 4mm;
+}
+.chapter-divider .en {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 12pt; color: var(--grey-500);
+  letter-spacing: 4px; margin-bottom: 14mm;
+}
+.chapter-divider .kicker {
+  font-size: 10.5pt; color: var(--grey-700);
+  max-width: 130mm; line-height: 1.9;
+}
+
+h1.section-title {
+  font-size: 18pt;
+  margin: 14mm 0 6mm 0;
+  padding-bottom: 4mm;
+  border-bottom: 1pt solid var(--grey-200);
+  position: relative;
+}
+h1.section-title::after {
+  content: ""; position: absolute;
+  left: 0; bottom: -1pt;
+  width: 16mm; height: 2pt;
+  background: var(--gold);
+}
+h1.section-title:first-child { margin-top: 0; }
+
+h2.sub { font-size: 13pt; color: var(--navy-light); margin: 10mm 0 4mm 0; }
+
+h3.h3 {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 10.5pt; font-weight: 700;
+  color: var(--gold); letter-spacing: 1px;
+  margin: 6mm 0 2mm 0;
+  text-transform: uppercase;
+}
+
+ul.bullets { margin: 4mm 0 6mm 0; padding-left: 18px; list-style: none; }
+ul.bullets li {
+  position: relative; padding-left: 14px;
+  margin-bottom: 4mm; text-align: justify; line-height: 1.75;
+}
+ul.bullets li::before {
+  content: ""; position: absolute;
+  left: 0; top: 9px;
+  width: 6px; height: 6px;
+  background: var(--gold); border-radius: 1px;
+}
+
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4mm; margin: 6mm 0;
+}
+.kpi-strip.three { grid-template-columns: repeat(3, 1fr); }
+.kpi {
+  background: var(--grey-100);
+  border-left: 3pt solid var(--gold);
+  padding: 5mm 5mm 5mm 5mm;
+  display: flex; flex-direction: column;
+}
+.kpi .label {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 8pt; font-weight: 700;
+  color: var(--gold); letter-spacing: 1.2px;
+  margin-bottom: 3mm;
+}
+.kpi .num {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 22pt; font-weight: 800;
+  color: var(--navy); line-height: 1.1; margin-bottom: 2mm;
+}
+.kpi .sub { font-size: 8.5pt; color: var(--grey-500); line-height: 1.5; }
+
+.callout {
+  background: var(--gold-soft);
+  border-left: 4pt solid var(--gold);
+  padding: 6mm 7mm; margin: 6mm 0;
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 11pt; font-weight: 700;
+  color: var(--navy); line-height: 1.7;
+}
+
+table.t {
+  width: 100%; border-collapse: collapse;
+  margin: 4mm 0 2mm 0; font-size: 9.5pt;
+  border: 0.6pt solid var(--navy-light);
+  table-layout: fixed;
+}
+table.t thead th {
+  background: var(--navy); color: var(--white);
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 9.5pt; font-weight: 700;
+  padding: 3mm 3mm; text-align: center;
+  border-bottom: 1.4pt solid var(--gold);
+  vertical-align: middle;
+}
+table.t tbody td {
+  padding: 2.8mm 3mm;
+  border-bottom: 0.4pt solid var(--grey-200);
+  vertical-align: middle;
+  color: var(--grey-700); line-height: 1.6;
+  word-wrap: break-word; word-break: break-word;
+}
+table.t tbody tr:nth-child(even) td { background: var(--grey-100); }
+table.t .tag {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700; color: var(--navy);
+}
+table.t .center { text-align: center; }
+table.t tfoot td {
+  background: var(--navy); color: var(--white);
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700; padding: 3mm;
+  border-top: 1.4pt solid var(--gold);
+}
+
+.caption {
+  font-size: 8.5pt; color: var(--grey-500);
+  margin: 1mm 0 6mm 0; font-style: italic;
+}
+
+.swot {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; margin: 4mm 0 2mm 0;
+  border: 0.6pt solid var(--navy-light);
+}
+.swot .cell {
+  padding: 5mm 6mm;
+  border-bottom: 0.4pt solid var(--grey-200);
+  border-right: 0.4pt solid var(--grey-200);
+}
+.swot .cell:nth-child(2), .swot .cell:nth-child(4) { border-right: none; }
+.swot .cell:nth-child(3), .swot .cell:nth-child(4) { border-bottom: none; }
+.swot .head {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 11pt; font-weight: 700;
+  color: var(--white); padding: 3mm 6mm; letter-spacing: 1px;
+}
+.swot .head.s { background: var(--navy); }
+.swot .head.w { background: var(--gold); }
+.swot .head.o { background: var(--gold); }
+.swot .head.t { background: var(--navy); }
+.swot ul { margin: 0; padding-left: 16px; }
+.swot li { margin-bottom: 2.5mm; font-size: 9.5pt; line-height: 1.65; color: var(--grey-700); }
+
+table.gantt {
+  width: 100%; border-collapse: collapse;
+  margin: 4mm 0 2mm 0; font-size: 9pt;
+  table-layout: fixed; border: 0.6pt solid var(--navy-light);
+}
+table.gantt th, table.gantt td {
+  text-align: center; padding: 2.6mm 0;
+  border: 0.4pt solid var(--grey-200);
+}
+table.gantt thead th {
+  background: var(--navy); color: var(--white);
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700; border-bottom: 1.2pt solid var(--gold);
+}
+table.gantt thead th:first-child {
+  text-align: left; padding-left: 3mm; width: 36mm;
+}
+table.gantt tbody td:first-child {
+  text-align: left; padding-left: 3mm;
+  background: var(--grey-100);
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700; color: var(--navy);
+}
+table.gantt .bar { background: var(--gold); color: var(--gold); }
+table.gantt .bar.lite { background: var(--gold-light); color: var(--gold-light); }
+
+.toc-row {
+  display: grid;
+  grid-template-columns: 14mm 1fr auto;
+  align-items: baseline;
+  padding: 3mm 0;
+  border-bottom: 0.5pt solid var(--grey-200);
+  gap: 4mm;
+}
+.toc-row .tn {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700; color: var(--gold); font-size: 11pt;
+}
+.toc-row .tt { font-size: 11pt; color: var(--grey-900); }
+.toc-row .te {
+  font-family: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 9pt; color: var(--grey-500); letter-spacing: 1px;
+}
+
+.no-break, .kpi-strip, table.t, table.gantt, .swot, .callout {
+  page-break-inside: avoid; break-inside: avoid;
+}
+
+.end-mark {
+  text-align: center; font-size: 9pt;
+  color: var(--grey-500);
+  margin-top: 14mm; letter-spacing: 4px;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="page cover">
+  <div class="brand">TIYAO ADVISORY · 钛耀咨询</div>
+  <div class="kicker">STRATEGIC FEASIBILITY STUDY</div>
+  <h1>三四线沿海城市<br>高端雪茄吧<br>可行性研究报告</h1>
+  <div class="subtitle">Tier-3/4 Coastal City Cigar Lounge<br>Generic Market-Entry Blueprint</div>
+  <div class="meta">
+    客户：项目方（保密）<br>
+    出具方：钛耀咨询 · TIYAO ADVISORY<br>
+    出具日期：2026 年 5 月 · 版本 V1.0（通用范式版）<br>
+    保密等级：内部 / Internal Use Only
+  </div>
+  <div class="footer-meta">
+    <span>CONFIDENTIAL · 机密文件 · 仅供项目方内部使用</span>
+    <span>2026 · 通用沿海三四线</span>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">TIYAO ADVISORY</span>
+  </div>
+
+  <h1 class="section-title">重要声明与适用边界</h1>
+  <p>本报告为<b>通用范式版</b>，目标对象为人口规模 80–300 万、GDP 1,500–3,500 亿元区间的中国沿海三四线城市，包含但不限于位于环渤海、长三角北翼、闽东、粤东与海南岛之外的中小型滨海地级市。报告所引用的人口、经济、客流与消费数据来源于国家统计局、行业基准与公开渠道，已尽合理努力进行交叉验证；具体落地城市的关键数字应由项目方在选址阶段进行专项替换与校准。</p>
+  <p>报告中的财务测算与情景分析为基于通用假设的指示性结果，不构成任何投资承诺或回报保证。雪茄、烟草及酒类经营涉及《烟草专卖法》《公共场所控制吸烟条例》及当地立法等监管要求，项目方在实际推进前，应与当地烟草专卖、市场监管、消防及住建部门就相关许可、场所标准与控烟规定进行专项确认。</p>
+
+  <div class="callout">
+    "三四线沿海，做雪茄吧的胜负点不是'够不够大'，而是'够不够稳'——把单店做成本地小圈层的恒久符号，比急速扩张更重要。"
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 1 页</span>
+  </div>
+</section>
+
+<!-- TOC -->
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">TIYAO ADVISORY</span>
+  </div>
+
+  <h1 class="section-title">目 录 &nbsp;/&nbsp; CONTENTS</h1>
+
+  <div class="toc-row"><span class="tn">00</span><span class="tt">执行摘要</span><span class="te">EXECUTIVE SUMMARY</span></div>
+  <div class="toc-row"><span class="tn">01</span><span class="tt">宏观环境与城市画像（PESTEL）</span><span class="te">MACRO &amp; CITY PROFILE</span></div>
+  <div class="toc-row"><span class="tn">02</span><span class="tt">消费市场与目标客群</span><span class="te">DEMAND &amp; SEGMENTATION</span></div>
+  <div class="toc-row"><span class="tn">03</span><span class="tt">行业格局与竞争分析（五力）</span><span class="te">INDUSTRY &amp; COMPETITION</span></div>
+  <div class="toc-row"><span class="tn">04</span><span class="tt">SWOT 与战略定位</span><span class="te">SWOT &amp; POSITIONING</span></div>
+  <div class="toc-row"><span class="tn">05</span><span class="tt">产品与体验设计</span><span class="te">PRODUCT &amp; EXPERIENCE</span></div>
+  <div class="toc-row"><span class="tn">06</span><span class="tt">选址策略与空间规划</span><span class="te">LOCATION &amp; SPACE</span></div>
+  <div class="toc-row"><span class="tn">07</span><span class="tt">运营模式与组织架构</span><span class="te">OPERATING MODEL</span></div>
+  <div class="toc-row"><span class="tn">08</span><span class="tt">营销与会员增长</span><span class="te">MARKETING &amp; GROWTH</span></div>
+  <div class="toc-row"><span class="tn">09</span><span class="tt">财务测算与回报情景</span><span class="te">FINANCIALS &amp; RETURNS</span></div>
+  <div class="toc-row"><span class="tn">10</span><span class="tt">风险矩阵与合规要点</span><span class="te">RISK &amp; COMPLIANCE</span></div>
+  <div class="toc-row"><span class="tn">11</span><span class="tt">实施路线图</span><span class="te">IMPLEMENTATION ROADMAP</span></div>
+  <div class="toc-row"><span class="tn">12</span><span class="tt">结论与下一步建议</span><span class="te">CONCLUSION &amp; NEXT STEPS</span></div>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 2 页</span>
+  </div>
+</section>
+
+<!-- CHAPTER 00 -->
+<section class="page chapter-divider">
+  <div class="num">00</div>
+  <div class="rule"></div>
+  <h1>执行摘要</h1>
+  <div class="en">EXECUTIVE SUMMARY</div>
+  <div class="kicker">本章浓缩全报告核心结论：市场机会、战略定位、关键经济指标与立项建议。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">00 · EXECUTIVE SUMMARY</span>
+  </div>
+
+  <h1 class="section-title">核心判断</h1>
+  <p>我们认为，<b>典型三四线沿海城市</b>具备落地 1 家"小而精、深而稳"专业雪茄吧的市场基础，但相较一二线及强三线城市，其特征是"<b>客群基数小、季节波动强、竞争少但天花板低</b>"。建议放弃"快开快扩"的连锁逻辑，以"<b>单店扎根 + 圈层封闭运营 + 港口/海岸文化叙事</b>"三重差异化锚定本地高净值客群，避开与酒店大堂吧、清吧、KTV、私人会所的同质化竞争。</p>
+
+  <div class="kpi-strip">
+    <div class="kpi"><div class="label">TARGET TYPE · 目标城市类型</div><div class="num">三四线</div><div class="sub">沿海地级市 / 强县级市</div></div>
+    <div class="kpi"><div class="label">GAP · 品类空白</div><div class="num">0 → 1</div><div class="sub">本地基本无成规模专业雪茄吧</div></div>
+    <div class="kpi"><div class="label">PAYBACK · 投资回收</div><div class="num">30–42 月</div><div class="sub">基础情景 IRR 约 11–15%</div></div>
+    <div class="kpi"><div class="label">TAM · 目标客群</div><div class="num">~1.0–2.0 万人</div><div class="sub">高净值家庭 + 商务高频客</div></div>
+  </div>
+
+  <h1 class="section-title">五大关键结论</h1>
+  <p><b>1. 供给侧空白</b>：典型三四线沿海城市核心商圈与酒店配套层尚无独立、专业的雪茄吧业态，存在明显品类卡位机会，但同时也意味着"市场教育成本"由首店承担。</p>
+  <p><b>2. 需求结构集中</b>：客源以"本地企业主 + 政府事业单位中高层 + 当地龙头企业中层 + 周边商务访客"四类为主；客群集中、关系链短、口碑传播效率高，但客群基数有限，TAM 上限明确。</p>
+  <p><b>3. 差异化定位窗口</b>：以"<b>港城客厅 · 圈层私享</b>"为核心叙事，承接"商务款待 + 圈层社交 + 仪式时刻"三大主场景，可与本地现有业态形成清晰区隔。</p>
+  <p><b>4. 财务底线情景需警惕</b>：在保守情景下（月均营收 32 万元、综合毛利 50%），盈亏平衡较为紧张；建议以会员制锁定一定比例预收账款来对冲淡旺季波动。</p>
+  <p><b>5. 关键风险来自人才与季节性</b>：三四线沿海城市夏季旺、冬季冷，且专业雪茄人才几乎只能外聘；前期需要明确"<b>人才输入 + 标准化 SOP</b>"路径，避免单点依赖。</p>
+
+  <div class="callout">
+    建议：选择性立项。前置 60 天内完成"客群画像验证 + 候选物业短名单 + 资深顾问意向"三项动作；如三项均能落地，则推进试营业；否则暂缓。
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 3 页</span>
+  </div>
+</section>
+
+<!-- CHAPTER 01 -->
+<section class="page chapter-divider">
+  <div class="num">01</div>
+  <div class="rule"></div>
+  <h1>宏观环境与城市画像</h1>
+  <div class="en">MACRO &amp; CITY PROFILE</div>
+  <div class="kicker">采用 PESTEL 框架对典型三四线沿海城市进行结构化扫描，识别项目可利用的趋势与约束。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">01 · MACRO &amp; CITY PROFILE</span>
+  </div>
+
+  <h1 class="section-title">1.1 城市基本面（典型画像）</h1>
+  <p>典型三四线沿海城市具备四类常见结构性特征：① 港口或临海工业带（化工、石化、海工、修造船等）；② 海洋渔业 / 食品加工产业链；③ 季节性海滨文旅（夏季为主、淡旺季显著）；④ 与一二线城市形成 1–3 小时高铁圈或高速公路圈。这些结构性特征派生出"<b>本地企业主稳定客群 + 季节性外地访客</b>"的复合客源结构。但相较一二线，城市具有：<b>外资比例低、外籍常住人口稀少、金融与高端服务业薄弱、夜经济商圈集中度较低</b>等共同短板。</p>
+
+  <table class="t">
+    <colgroup>
+      <col style="width:30%"><col style="width:35%"><col style="width:35%">
+    </colgroup>
+    <thead>
+      <tr><th>关键参数</th><th>典型区间</th><th>对项目的含义</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">常住人口</td><td class="center">80 – 300 万</td><td>客群天花板较低，单店逻辑成立、连锁化谨慎。</td></tr>
+      <tr><td class="tag">GDP 总量</td><td class="center">1,500 – 3,500 亿元</td><td>足以支撑一家精品雪茄吧，但难以承接多家同业并存。</td></tr>
+      <tr><td class="tag">人均可支配收入</td><td class="center">3.5 – 5.5 万元</td><td>大众消费力中等，但高净值客群仍有承接力。</td></tr>
+      <tr><td class="tag">高净值家庭数（资产 600 万+）</td><td class="center">~6,000 – 18,000 户</td><td>核心 TAM 在数千户量级，需要高频次、深关系运营。</td></tr>
+      <tr><td class="tag">五星级及高端酒店</td><td class="center">2 – 6 家</td><td>合作通道有限但关键，前置锁定 1–2 家头部酒店。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 1.0 · 典型三四线沿海城市基本面参数（指示性）</div>
+
+  <h1 class="section-title">1.2 PESTEL 框架扫描</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:18%"><col style="width:42%"><col style="width:40%">
+    </colgroup>
+    <thead>
+      <tr><th>维度</th><th>关键观察</th><th>对项目的含义</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">Political<br>政策</td>
+          <td>烟草专卖严管控；地方对夜经济与文旅业态持鼓励态度，但执法颗粒度因地而异；控烟立法多以省级为主、市级落地速度不一。</td>
+          <td>需以"专卖零售 + 合规品鉴空间"模式立项；前置与烟草、消防、市场监管联合预审。</td></tr>
+      <tr><td class="tag">Economic<br>经济</td>
+          <td>支柱产业相对单一，对宏观与外贸周期较为敏感；居民储蓄率高、显性消费偏保守；房产是高净值家庭主要资产。</td>
+          <td>客单价定位以"中高"为主（500–1,000 元为主流带），适度容纳"高客单"私密包厢。</td></tr>
+      <tr><td class="tag">Social<br>社会</td>
+          <td>"熟人社会"特征明显，关系网密、信息传播快；商务社交高度依赖"圈层背书"；新锐企业家与本地老牌企业家共存。</td>
+          <td>"圈层 + 推荐 + 仪式感"是体验设计核心；私密性与隐私保护是入门门槛。</td></tr>
+      <tr><td class="tag">Technological<br>技术</td>
+          <td>智能温湿度控制、SCRM、私域工具成熟；本地新媒体生态以微信、抖音为主，小红书渗透稍弱。</td>
+          <td>以技术降低运营复杂度（雪茄房自动化、会员数字化）；社群运营以微信为核心抓手。</td></tr>
+      <tr><td class="tag">Environmental<br>环境</td>
+          <td>沿海气候湿度大、夏季高温、冬季季风强，对雪茄存储构成挑战；老城物业多缺独立排烟。</td>
+          <td>CapEx 中应单列雪茄房与新风系统，约占总投资 13–18%；优先选择新建综合体。</td></tr>
+      <tr><td class="tag">Legal<br>法律</td>
+          <td>需办理烟草零售许可、酒类经营备案、餐饮服务许可、营业执照及消防备案；广告法对烟草宣传严格执法。</td>
+          <td>品牌传播聚焦"生活方式"叙事，严守不在公开渠道宣传具体烟草产品的红线。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 1.1 · 三四线沿海城市雪茄吧项目 PESTEL 扫描</div>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 4 页</span>
+  </div>
+</section>
+
+<!-- CHAPTER 02 -->
+<section class="page chapter-divider">
+  <div class="num">02</div>
+  <div class="rule"></div>
+  <h1>消费市场与目标客群</h1>
+  <div class="en">DEMAND &amp; SEGMENTATION</div>
+  <div class="kicker">从城市消费力、客群分层与画像三个维度刻画需求侧，识别核心与扩展客群。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">02 · DEMAND &amp; SEGMENTATION</span>
+  </div>
+
+  <h1 class="section-title">2.1 客群分层与潜力测算（指示性）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:22%"><col style="width:46%"><col style="width:16%"><col style="width:16%">
+    </colgroup>
+    <thead>
+      <tr><th>细分客群</th><th>画像</th><th>估算规模</th><th>优先级</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">本地企业主（民营）</td>
+          <td>港口物流、化工、海工、食品加工、地产、批发零售业主，40–58 岁，圈层密集、商务社交频次高。</td>
+          <td class="center">约 4–6 千人</td>
+          <td class="center">★★★★★</td></tr>
+      <tr><td class="tag">国企、事业单位与政商接待</td>
+          <td>地方国企中高层、商会、行业协会负责人，重视场所合规与隐私。</td>
+          <td class="center">约 1.5–2.5 千人</td>
+          <td class="center">★★★★☆</td></tr>
+      <tr><td class="tag">外地高频商务访客</td>
+          <td>因港口贸易、产业上下游、政府招商停留的外地中高管，住头部酒店。</td>
+          <td class="center">月均 1.5–3 千人次</td>
+          <td class="center">★★★★☆</td></tr>
+      <tr><td class="tag">海滨文旅度假客（旺季）</td>
+          <td>面向周边一二线城市的中高端度假人群，集中于夏秋。</td>
+          <td class="center">旺季 2–6 万人次</td>
+          <td class="center">★★★☆☆</td></tr>
+      <tr><td class="tag">新中产男性与圈层青年</td>
+          <td>30–40 岁本地新中产，对雪茄认知处于"入门"阶段，需较长培育周期。</td>
+          <td class="center">约 4–8 千人</td>
+          <td class="center">★★☆☆☆</td></tr>
+      <tr><td class="tag">女性与跨界客群</td>
+          <td>受品质生活方式吸引的女性消费者；规模较小但能强化场所调性。</td>
+          <td class="center">增量待培育</td>
+          <td class="center">★★☆☆☆</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 2.1 · 目标客群分层与优先级（指示性估算）</div>
+
+  <h1 class="section-title">2.2 消费场景与价值主张</h1>
+  <p>基于客群画像，我们识别出四类高价值消费场景，每类场景对应不同的产品组合与定价策略，是后续 SKU 与排期设计的依据：</p>
+  <ul class="bullets">
+    <li><b>商务款待与公关</b>：私密包厢 + 中端雪茄 + 名酒，客单 1,000–2,200 元；隐私性与发票合规是关键。</li>
+    <li><b>圈层定期聚会</b>：会员主场，月度品鉴沙龙、嘉宾分享，客单 500–800 元。</li>
+    <li><b>仪式性时刻</b>：生日、签约、晋升等场景，雪茄定制礼盒 + 私人服务，客单 1,500+ 元。</li>
+    <li><b>度假体验（旺季）</b>：外地客的"海岸 + 雪茄"主题体验，客单 400–600 元。</li>
+  </ul>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 5 页</span>
+  </div>
+</section>
+
+<!-- CHAPTER 03 -->
+<section class="page chapter-divider">
+  <div class="num">03</div>
+  <div class="rule"></div>
+  <h1>行业格局与竞争分析</h1>
+  <div class="en">INDUSTRY &amp; COMPETITION</div>
+  <div class="kicker">采用波特五力模型评估行业吸引力，并对潜在直接、间接竞争进行盘点。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">03 · INDUSTRY &amp; COMPETITION</span>
+  </div>
+
+  <h1 class="section-title">3.1 波特五力评估</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:22%"><col style="width:14%"><col style="width:64%">
+    </colgroup>
+    <thead>
+      <tr><th>维度</th><th>强度</th><th>核心判断</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">既有竞争对手</td><td class="center">低</td>
+          <td>典型三四线沿海城市基本无成规模专业雪茄吧，主要替代为酒店大堂吧、清吧、KTV 与私人会所。</td></tr>
+      <tr><td class="tag">潜在新进入者</td><td class="center">低—中</td>
+          <td>烟草许可与雪茄供应链构成中等壁垒；外部连锁短期内不太可能跨城进入此体量市场，但本地资本仿盘风险存在。</td></tr>
+      <tr><td class="tag">替代品威胁</td><td class="center">中—高</td>
+          <td>酒局、KTV、棋牌室、商会会所是注意力替代品；雪茄品类需要"教育时间"才能稳固心智。</td></tr>
+      <tr><td class="tag">供应商议价能力</td><td class="center">中—高</td>
+          <td>古巴优质雪茄受配额与流通限制，三四线物流距离更远；建议绑定 2 家头部代理商 + 1 个免税渠道，分散风险。</td></tr>
+      <tr><td class="tag">客户议价能力</td><td class="center">中</td>
+          <td>客户基数小、关系链短、口碑双向放大；服务任何一次失误都可能产生负面圈层效应。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 3.1 · 行业五力扫描（综合吸引力：中）</div>
+
+  <h1 class="section-title">3.2 竞争盘点与卡位逻辑</h1>
+  <p>三四线沿海城市现有的"类似业态"主要分为四类：① 高端酒店配套酒吧（依附型，专业度有限）；② 城市清吧与音乐酒吧（社交属性强、雪茄专业度弱）；③ 私人会所与商会会所（封闭、不对外）；④ 局部存在的"雪茄会所"型棋牌室（合规度参差）。这一格局意味着新项目可在"<b>专业 + 半开放 + 圈层运营 + 合规规范</b>"的中间位置建立稀缺性。</p>
+
+  <div class="callout">
+    战略锚点：做本地"<b>第一家有专业 Walk-in Humidor、能调配国际烈酒、并以会员制运营圈层活动的合规雪茄吧</b>"——把"专业化"和"合规化"做成本地认知中的天然壁垒。
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 6 页</span>
+  </div>
+</section>
+
+<!-- CHAPTER 04 -->
+<section class="page chapter-divider">
+  <div class="num">04</div>
+  <div class="rule"></div>
+  <h1>SWOT 与战略定位</h1>
+  <div class="en">SWOT &amp; POSITIONING</div>
+  <div class="kicker">在外部环境与内部资源的交叉视角下，明确战略锚点与差异化路径。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">04 · SWOT &amp; POSITIONING</span>
+  </div>
+
+  <h1 class="section-title">4.1 SWOT 矩阵</h1>
+  <div class="swot">
+    <div class="head s">S · 优势 STRENGTHS</div>
+    <div class="head w">W · 劣势 WEAKNESSES</div>
+    <div class="cell">
+      <ul>
+        <li>品类先发：本地基本无专业雪茄吧</li>
+        <li>圈层关系网密集，口碑传播效率高</li>
+        <li>沿海港口或文旅故事可低成本复用</li>
+        <li>本地竞争烈度低，租金可议空间大</li>
+      </ul>
+    </div>
+    <div class="cell">
+      <ul>
+        <li>客群基数小、TAM 上限明确</li>
+        <li>季节性波动显著（夏旺冬淡）</li>
+        <li>专业雪茄 / 调酒人才本地稀缺</li>
+        <li>供应链距离远、物流与备货周期长</li>
+      </ul>
+    </div>
+    <div class="head o">O · 机会 OPPORTUNITIES</div>
+    <div class="head t">T · 威胁 THREATS</div>
+    <div class="cell">
+      <ul>
+        <li>夜经济与文旅升级窗口</li>
+        <li>商务社交场景升级、小圈层化</li>
+        <li>与酒店、4S 店、商会的稳定合作通道</li>
+        <li>低成本通过私域内容塑造心智</li>
+      </ul>
+    </div>
+    <div class="cell">
+      <ul>
+        <li>烟草监管趋严、控烟政策升级</li>
+        <li>宏观经济与外贸波动放大可选消费</li>
+        <li>本地资本仿盘 / 价格战</li>
+        <li>关键人员流动 / 单点风险</li>
+      </ul>
+    </div>
+  </div>
+  <div class="caption">表 4.1 · SWOT 战略矩阵</div>
+
+  <h1 class="section-title">4.2 战略锚点（Positioning Statement）</h1>
+  <div class="callout">
+    "港城客厅 · 圈层私享" —— 本市唯一以专业雪茄、国际烈酒与小圈层文化为内核的高端会员制雪茄吧，为本地企业家、政商接待与商务访客提供"<b>懂行、私密、有温度</b>"的社交场域。
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 7 页</span>
+  </div>
+</section>
+
+<!-- CHAPTER 05 -->
+<section class="page chapter-divider">
+  <div class="num">05</div>
+  <div class="rule"></div>
+  <h1>产品与体验设计</h1>
+  <div class="en">PRODUCT &amp; EXPERIENCE</div>
+  <div class="kicker">围绕客群与战略锚点，设计产品组合、体验旅程与价格区间。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">05 · PRODUCT &amp; EXPERIENCE</span>
+  </div>
+
+  <h1 class="section-title">5.1 产品组合（SKU 蓝图）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:18%"><col style="width:42%"><col style="width:22%"><col style="width:18%">
+    </colgroup>
+    <thead>
+      <tr><th>品类</th><th>代表 SKU 方向</th><th>参考价位</th><th>占营收预期</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">雪茄</td>
+          <td>古巴系列（COHIBA / Montecristo / Romeo y Julieta）、尼加拉瓜与多米尼加精选</td>
+          <td class="center">200 – 1,200 元/支</td>
+          <td class="center">约 42%</td></tr>
+      <tr><td class="tag">烈酒</td>
+          <td>单一麦芽威士忌、干邑、波本与中国精品白酒（含本地名酒）</td>
+          <td class="center">60 – 400 元/杯</td>
+          <td class="center">约 26%</td></tr>
+      <tr><td class="tag">搭餐与轻食</td>
+          <td>熟成牛肉、伊比利亚火腿、海岸生蚝、奶酪拼盘、雪茄伴侣黑巧</td>
+          <td class="center">50 – 220 元/份</td>
+          <td class="center">约 13%</td></tr>
+      <tr><td class="tag">会员与体验</td>
+          <td>两档年度会籍、私人储烟柜、品鉴会、雪茄旅行</td>
+          <td class="center">0.8 – 3.8 万元/年</td>
+          <td class="center">约 16%</td></tr>
+      <tr><td class="tag">礼盒与定制</td>
+          <td>节日礼盒、企业定制、雪茄火机/剪等周边</td>
+          <td class="center">600 – 6,000 元/单</td>
+          <td class="center">约 3%</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 5.1 · SKU 蓝图（基础情景）</div>
+
+  <h1 class="section-title">5.2 客户体验旅程</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:14%"><col style="width:32%"><col style="width:54%">
+    </colgroup>
+    <thead>
+      <tr><th>阶段</th><th>触点</th><th>体验设计要点</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">① 触达</td><td>微信 / 小程序、酒店礼宾、圈层口碑</td>
+          <td>"私享 + 圈层"叙事，避免硬广，强调推荐入会，匹配本地熟人社会属性。</td></tr>
+      <tr><td class="tag">② 预约</td><td>一对一管家或小程序预约</td>
+          <td>记录偏好（口味、烈酒、忌讳、人际关系），48 小时内回访确认。</td></tr>
+      <tr><td class="tag">③ 到店</td><td>迎宾、衣帽寄存、引导入座</td>
+          <td>入座 90 秒内完成迎宾酒与个性化招呼；对熟客做"免介绍"识别。</td></tr>
+      <tr><td class="tag">④ 品鉴</td><td>雪茄推荐、开盒、点燃、配酒</td>
+          <td>雪茄顾问全程陪同，提供 1–2 款搭配建议，知识内容以"易懂耐听"为主。</td></tr>
+      <tr><td class="tag">⑤ 沉淀</td><td>会员档案、私人储烟柜、生日礼遇</td>
+          <td>数据化偏好沉淀，重要节点（生日、企业重大事件）专属关怀。</td></tr>
+      <tr><td class="tag">⑥ 复购裂变</td><td>主题沙龙、跨界活动、推荐礼遇</td>
+          <td>每会员每年至少 2 次社群活动 + 1 次 1:1 礼遇 + 1 次推荐返赠。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 5.2 · 客户体验旅程关键触点</div>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 8 页</span>
+  </div>
+</section>
+
+<!-- CHAPTER 06 -->
+<section class="page chapter-divider">
+  <div class="num">06</div>
+  <div class="rule"></div>
+  <h1>选址策略与空间规划</h1>
+  <div class="en">LOCATION &amp; SPACE</div>
+  <div class="kicker">从客流、租金、合规与品牌四个维度对候选区域进行打分，并给出空间功能布置建议。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">06 · LOCATION &amp; SPACE</span>
+  </div>
+
+  <h1 class="section-title">6.1 候选商圈打分（1–5 分制 · 通用模板）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:32%"><col style="width:13%"><col style="width:13%"><col style="width:13%"><col style="width:13%"><col style="width:16%">
+    </colgroup>
+    <thead>
+      <tr><th>候选商圈类型</th><th>客流质量</th><th>租金水平</th><th>合规便利</th><th>品牌契合</th><th>综合</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">本地头部五星酒店配套层</td>
+          <td class="center">5</td><td class="center">3</td><td class="center">4</td><td class="center">5</td><td class="center"><b>4.3</b></td></tr>
+      <tr><td class="tag">市中心 CBD 写字楼裙房</td>
+          <td class="center">4</td><td class="center">3</td><td class="center">5</td><td class="center">4</td><td class="center"><b>4.0</b></td></tr>
+      <tr><td class="tag">海滨度假区核心地段</td>
+          <td class="center">4</td><td class="center">2</td><td class="center">3</td><td class="center">5</td><td class="center"><b>3.5</b></td></tr>
+      <tr><td class="tag">高端商业综合体（万达 / 银座等）</td>
+          <td class="center">3</td><td class="center">3</td><td class="center">4</td><td class="center">3</td><td class="center"><b>3.3</b></td></tr>
+      <tr><td class="tag">独立沿街高端街区 / 老城更新区</td>
+          <td class="center">3</td><td class="center">4</td><td class="center">3</td><td class="center">3</td><td class="center"><b>3.3</b></td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 6.1 · 候选商圈打分模板（首选：头部五星酒店配套；备选：CBD 裙房）</div>
+
+  <h1 class="section-title">6.2 空间功能与面积建议</h1>
+  <p>建议总建筑面积 <b>180–240 平方米</b>，核心功能区如下（较一二线版本压缩 VIP 沙龙厅与员工区，控制 CapEx 与人力成本）：</p>
+  <ul class="bullets">
+    <li><b>礼宾接待区（10–14㎡）</b>：低饱和度灯光 + 入门叙事墙，承担首因效应。</li>
+    <li><b>主吧台与开放席位（40–55㎡）</b>：8–12 个吧台位，承接散客与轻度社交。</li>
+    <li><b>私密包厢 ×3（每间 16–24㎡）</b>：商务洽谈、圈层小聚的核心动线，是利润大头。</li>
+    <li><b>多功能沙龙厅（28–38㎡）</b>：可容纳 10–14 人的活动与品鉴会，支持改作包厢使用。</li>
+    <li><b>Walk-in Humidor 雪茄房（12–18㎡）</b>：恒温恒湿、独立新风，差异化核心。</li>
+    <li><b>会员储烟柜墙（6–10㎡）</b>：可视化的会员归属感符号，30–50 个柜位。</li>
+    <li><b>员工与备品区（22–30㎡）</b>：含吧台后场、洗杯、备餐与库房。</li>
+  </ul>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 9 页</span>
+  </div>
+</section>
+
+<!-- CHAPTER 07 -->
+<section class="page chapter-divider">
+  <div class="num">07</div>
+  <div class="rule"></div>
+  <h1>运营模式与组织架构</h1>
+  <div class="en">OPERATING MODEL</div>
+  <div class="kicker">聚焦会员体系、人员配置与服务标准，给出 Day-1 可落地的运营框架。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">07 · OPERATING MODEL</span>
+  </div>
+
+  <h1 class="section-title">7.1 二级会员体系（精简版）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:22%"><col style="width:15%"><col style="width:48%"><col style="width:15%">
+    </colgroup>
+    <thead>
+      <tr><th>等级</th><th>年费</th><th>核心权益</th><th>Y1 目标</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">港城 · CLASSIC</td>
+          <td class="center">0.8 万元</td>
+          <td>储烟柜、品鉴会优先、9 折消费、生日礼遇</td>
+          <td class="center">130 人</td></tr>
+      <tr><td class="tag">港城 · PRESTIGE</td>
+          <td class="center">2.0 万元</td>
+          <td>独立储烟柜、专属顾问、季度沙龙、副卡、限定批次优先</td>
+          <td class="center">40 人</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 7.1 · 二级会员体系（首年目标 170 名核心会员；不设 LEGEND 顶级档以避免过早承诺）</div>
+
+  <h1 class="section-title">7.2 组织架构（首年 7 人精简团队）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:24%"><col style="width:12%"><col style="width:64%">
+    </colgroup>
+    <thead>
+      <tr><th>岗位</th><th>编制</th><th>关键职责</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">店长 / 运营总监</td><td class="center">1</td>
+          <td>总体经营、会员关系、合规与对外协作；建议有一二线雪茄 / 高端餐饮经验。</td></tr>
+      <tr><td class="tag">首席雪茄顾问（外聘）</td><td class="center">1</td>
+          <td>选品、培训、品鉴会主持；需从一二线引入，前 12 个月可考虑驻场或半驻场。</td></tr>
+      <tr><td class="tag">雪茄顾问 / 服务师</td><td class="center">1</td>
+          <td>一对一服务、雪茄推荐、知识传递；本地培养 + 外部引入混合配置。</td></tr>
+      <tr><td class="tag">首席调酒师</td><td class="center">1</td>
+          <td>烈酒酒单、配酒方案、季节限定。</td></tr>
+      <tr><td class="tag">助理调酒 / 服务</td><td class="center">2</td>
+          <td>吧台运营、出品、回收。</td></tr>
+      <tr><td class="tag">会员与营销专员</td><td class="center">1</td>
+          <td>SCRM 运营、内容产出、活动组织、采购协调。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 7.2 · 首年组织架构（合计 7 人，旺季可外聘 1–2 名兼职；厨房采用外采半成品 + 简单出品策略）</div>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 10 页</span>
+  </div>
+</section>
+
+<!-- CHAPTER 08 -->
+<section class="page chapter-divider">
+  <div class="num">08</div>
+  <div class="rule"></div>
+  <h1>营销与会员增长</h1>
+  <div class="en">MARKETING &amp; GROWTH</div>
+  <div class="kicker">基于"低密度、高调性"原则，构建从冷启动到稳态的传播与增长路径。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">08 · MARKETING &amp; GROWTH</span>
+  </div>
+
+  <h1 class="section-title">8.1 增长路径（Y1）</h1>
+  <p>三四线沿海城市的"熟人社会"特征意味着：<b>口碑放大效应大、营销试错成本高</b>。增长路径以"<b>圈层口碑 + 内容生活方式 + 跨界合作</b>"三条腿前进，但传播节奏与一二线相比应更慢、更稳：</p>
+  <ul class="bullets">
+    <li><b>0–3 月（蓄水）</b>：完成品牌识别、小程序、SCRM 与种子会员邀请清单（30–50 人）；前置与商会、行业协会、头部酒店礼宾对接。</li>
+    <li><b>3–6 月（试营业）</b>：50 名种子会员体验 + 媒体小范围探店；纯邀请制，避免任何大众宣传。</li>
+    <li><b>6–12 月（正式开业）</b>：每月 1 场主题品鉴会 + 1 场跨界合作（汽车 / 商会 / 艺术）；以微信社群和短视频"生活方式"内容为主。</li>
+    <li><b>12–18 月（稳态）</b>：会员推荐机制成熟、第二批会籍升级；与本地酒店、银行私行、汽车 4S 店、本地龙头企业建立长期联名计划。</li>
+  </ul>
+
+  <h1 class="section-title">8.2 跨界合作清单</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:24%"><col style="width:36%"><col style="width:40%">
+    </colgroup>
+    <thead>
+      <tr><th>合作方类别</th><th>合作形式</th><th>对项目的价值</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">头部酒店与度假村</td>
+          <td>客房雪茄礼遇 / 联名套餐 / 礼宾导客</td>
+          <td>稳定外地高端访客与商务出行客导入。</td></tr>
+      <tr><td class="tag">银行私行 / 财富管理</td>
+          <td>客户答谢沙龙 / 信用卡权益</td>
+          <td>精准触达高净值客户，且关系稳定。</td></tr>
+      <tr><td class="tag">豪华汽车 4S 店</td>
+          <td>试驾 + 雪茄之夜 / 提车仪式</td>
+          <td>品牌调性互补、共享客户资源。</td></tr>
+      <tr><td class="tag">本地商会 / 行业协会</td>
+          <td>会员日 / 年度活动 / 商务接待包场</td>
+          <td>批量、稳定、低成本的客流入口。</td></tr>
+      <tr><td class="tag">企业团建与公关</td>
+          <td>包场 / 接待 / 年度活动</td>
+          <td>B 端营收补充，提升淡季利用率。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 8.1 · 重点跨界合作清单</div>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 11 页</span>
+  </div>
+</section>
+
+<!-- CHAPTER 09 -->
+<section class="page chapter-divider">
+  <div class="num">09</div>
+  <div class="rule"></div>
+  <h1>财务测算与回报情景</h1>
+  <div class="en">FINANCIALS &amp; RETURNS</div>
+  <div class="kicker">给出三套情景下的投资、营收、成本与回报指引。所有数字均为指示性，仅供决策参考。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">09 · FINANCIALS &amp; RETURNS</span>
+  </div>
+
+  <h1 class="section-title">9.1 一次性投资（CapEx）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:32%"><col style="width:22%"><col style="width:46%">
+    </colgroup>
+    <thead>
+      <tr><th>科目</th><th>金额（万元）</th><th>说明</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">设计与装修</td><td class="center">90 – 130</td><td>含主材中端升级与沿海气候应对。</td></tr>
+      <tr><td class="tag">Walk-in Humidor 与新风</td><td class="center">25 – 38</td><td>恒温恒湿系统、独立新风、消防联动。</td></tr>
+      <tr><td class="tag">家具与软装</td><td class="center">20 – 32</td><td>真皮沙发、中端定制灯具、艺术陈列。</td></tr>
+      <tr><td class="tag">IT 与音视频</td><td class="center">12 – 18</td><td>SCRM、POS、监控、音响、智控。</td></tr>
+      <tr><td class="tag">首批雪茄与酒水备货</td><td class="center">45 – 70</td><td>雪茄 35–50 万 / 烈酒 10–20 万。</td></tr>
+      <tr><td class="tag">品牌与开业活动</td><td class="center">10 – 18</td><td>VI 设计、内容拍摄、首发活动。</td></tr>
+      <tr><td class="tag">许可与开办杂费</td><td class="center">6 – 12</td><td>烟草、消防、卫健、营业执照等。</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td>合计</td><td class="center">208 – 318</td><td>建议中位约 260 万元</td></tr>
+    </tfoot>
+  </table>
+  <div class="caption">表 9.1 · 一次性投资估算（指示性）</div>
+
+  <h1 class="section-title">9.2 三情景营收预测（年度）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%">
+    </colgroup>
+    <thead>
+      <tr><th>情景</th><th>月均营收</th><th>年度营收</th><th>综合毛利率</th><th>净利率</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">保守情景</td><td class="center">32 万元</td><td class="center">384 万元</td><td class="center">50%</td><td class="center">3 – 6%</td></tr>
+      <tr><td class="tag">基础情景</td><td class="center">48 万元</td><td class="center">576 万元</td><td class="center">55%</td><td class="center">10 – 14%</td></tr>
+      <tr><td class="tag">乐观情景</td><td class="center">62 万元</td><td class="center">744 万元</td><td class="center">59%</td><td class="center">16 – 20%</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 9.2 · 三情景年度营收与利润率（稳态期）</div>
+
+  <h1 class="section-title">9.3 回报指标（基础情景）</h1>
+  <div class="kpi-strip">
+    <div class="kpi"><div class="label">PAYBACK · 回收期</div><div class="num">30–42 月</div><div class="sub">含 6 个月筹建期</div></div>
+    <div class="kpi"><div class="label">IRR · 内部回报率</div><div class="num">11–15%</div><div class="sub">5 年期、不含残值</div></div>
+    <div class="kpi"><div class="label">BREAKEVEN · 单月盈亏</div><div class="num">≈ 38 万</div><div class="sub">基础情景 / 综合毛利 55%</div></div>
+    <div class="kpi"><div class="label">OCC · 平均上座率</div><div class="num">40–50%</div><div class="sub">稳态期目标</div></div>
+  </div>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 12 页</span>
+  </div>
+</section>
+
+<!-- CHAPTER 10 -->
+<section class="page chapter-divider">
+  <div class="num">10</div>
+  <div class="rule"></div>
+  <h1>风险矩阵与合规要点</h1>
+  <div class="en">RISK &amp; COMPLIANCE</div>
+  <div class="kicker">识别核心风险并给出缓释措施，重点强调烟草与控烟相关合规边界。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">10 · RISK &amp; COMPLIANCE</span>
+  </div>
+
+  <h1 class="section-title">10.1 风险矩阵（概率 × 影响）</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:26%"><col style="width:11%"><col style="width:11%"><col style="width:52%">
+    </colgroup>
+    <thead>
+      <tr><th>风险</th><th>概率</th><th>影响</th><th>缓释措施</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag">客群基数不足 / 需求测算偏乐观</td>
+          <td class="center">中—高</td><td class="center">高</td>
+          <td>立项前必须完成 80+ 名潜在客户 1:1 访谈；保守情景先行。</td></tr>
+      <tr><td class="tag">季节性营收波动</td>
+          <td class="center">高</td><td class="center">中</td>
+          <td>会员预收 + B 端包场 + 礼盒业务对冲；按季度滚动预算。</td></tr>
+      <tr><td class="tag">关键人才（雪茄顾问）流失</td>
+          <td class="center">中—高</td><td class="center">高</td>
+          <td>外聘合同 + 期权 / 利润分成 + 副手内训，避免单点依赖。</td></tr>
+      <tr><td class="tag">烟草许可与控烟合规收紧</td>
+          <td class="center">中</td><td class="center">高</td>
+          <td>合规预审、专项法律顾问、独立排烟 / 新风冗余。</td></tr>
+      <tr><td class="tag">雪茄供应链中断或物流延迟</td>
+          <td class="center">中</td><td class="center">中—高</td>
+          <td>多源代理 + 安全库存 12–16 周；与一二线仓储合作做应急调拨。</td></tr>
+      <tr><td class="tag">本地资本仿盘 / 价格战</td>
+          <td class="center">中</td><td class="center">中</td>
+          <td>以会员深度与圈层资产建立迁移成本；不主动降价跟战。</td></tr>
+      <tr><td class="tag">沿海气候导致存储事故</td>
+          <td class="center">低—中</td><td class="center">中</td>
+          <td>双套温湿度系统 + 实时告警 + 月度专项巡检 + 保险覆盖。</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 10.1 · 主要风险与缓释措施</div>
+
+  <h1 class="section-title">10.2 合规清单（开业前必须完成）</h1>
+  <ul class="bullets">
+    <li>烟草专卖零售许可证（向当地烟草专卖局申请，需明确经营场所与品类）。</li>
+    <li>酒类经营备案与营业执照、食品经营许可证（含小食与拼盘）。</li>
+    <li>消防安全检查与排烟、新风系统验收。</li>
+    <li>场所控烟告示与烟雾防扩散设计，符合《公共场所控制吸烟条例》及当地立法要求。</li>
+    <li>广告与传播红线培训：避免在公开渠道宣传具体烟草品牌与产品，特别注意微信朋友圈、视频号合规边界。</li>
+  </ul>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 13 页</span>
+  </div>
+</section>
+
+<!-- CHAPTER 11 -->
+<section class="page chapter-divider">
+  <div class="num">11</div>
+  <div class="rule"></div>
+  <h1>实施路线图</h1>
+  <div class="en">IMPLEMENTATION ROADMAP</div>
+  <div class="kicker">以 12 个月为颗粒度，给出从立项到稳态运营的关键里程碑与责任分工。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">11 · IMPLEMENTATION ROADMAP</span>
+  </div>
+
+  <h1 class="section-title">11.1 12 个月里程碑甘特</h1>
+  <table class="gantt">
+    <thead>
+      <tr><th>阶段 / 月份</th>
+          <th>M1</th><th>M2</th><th>M3</th><th>M4</th>
+          <th>M5</th><th>M6</th><th>M7</th><th>M8</th>
+          <th>M9</th><th>M10</th><th>M11</th><th>M12</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>立项 / 客群验证</td>
+          <td class="bar">·</td><td class="bar">·</td><td class="bar">·</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>选址 / 合规预审</td>
+          <td></td><td class="bar">·</td><td class="bar">·</td><td class="bar">·</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>设计 / 装修</td>
+          <td></td><td></td><td class="bar">·</td><td class="bar">·</td>
+          <td class="bar">·</td><td class="bar">·</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>供应链 / 备货</td>
+          <td></td><td></td><td></td><td class="bar lite">·</td>
+          <td class="bar">·</td><td class="bar">·</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>团队 / 培训</td>
+          <td></td><td></td><td></td><td></td>
+          <td class="bar lite">·</td><td class="bar">·</td><td class="bar">·</td>
+          <td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>品牌 / 种子会员</td>
+          <td></td><td></td><td></td><td class="bar lite">·</td>
+          <td class="bar">·</td><td class="bar">·</td><td class="bar">·</td>
+          <td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>试营业</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td>
+          <td class="bar">·</td><td class="bar">·</td>
+          <td></td><td></td><td></td><td></td></tr>
+      <tr><td>正式开业 / 营销</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          <td class="bar">·</td><td class="bar">·</td><td class="bar">·</td>
+          <td></td><td></td></tr>
+      <tr><td>稳态 / 复盘迭代</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          <td class="bar">·</td><td class="bar">·</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 11.1 · 12 个月里程碑甘特（金色块 = 核心活动月份）</div>
+
+  <h1 class="section-title">11.2 关键里程碑（Go / No-Go 决策点）</h1>
+  <ul class="bullets">
+    <li><b>M2 末</b>：完成 80+ 名潜在客户 1:1 访谈，付费意愿摸底 → <b>Go / No-Go #0（最关键）</b></li>
+    <li><b>M3 末</b>：选址锁定 + 合规可行性确认 + 资深顾问意向 → Go / No-Go #1</li>
+    <li><b>M6 末</b>：装修过半 + 烟草许可申请受理 + 20 名种子会员 → Go / No-Go #2</li>
+    <li><b>M8 末</b>：试营业首月营收达成保守情景的 70% → 进入正式开业准备</li>
+    <li><b>M12 末</b>：会员沉淀 ≥ 120 人，月营收达基础情景的 75% → 进入稳态优化</li>
+  </ul>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 14 页</span>
+  </div>
+</section>
+
+<!-- CHAPTER 12 -->
+<section class="page chapter-divider">
+  <div class="num">12</div>
+  <div class="rule"></div>
+  <h1>结论与下一步建议</h1>
+  <div class="en">CONCLUSION &amp; NEXT STEPS</div>
+  <div class="kicker">总结判断并给出推进项目所需的下一步具体动作。</div>
+</section>
+
+<section class="page body-page">
+  <div class="header-bar">
+    <span class="h-left">三四线沿海城市雪茄吧 · 可行性研究报告</span>
+    <span class="h-right">12 · CONCLUSION &amp; NEXT STEPS</span>
+  </div>
+
+  <h1 class="section-title">总体结论</h1>
+  <p>基于对典型三四线沿海城市宏观环境、需求结构、行业格局与财务可行性的系统分析，我们的总体判断是：<b>本项目在合适的城市与团队条件下具备可行性，但相较一二线项目"利润率上限低、客群天花板紧、季节性强、人才依赖高"，建议以"小而精、深而稳、慢而准"的策略推进立项</b>。</p>
+  <p>三四线沿海城市的雪茄吧，本质是一门"<b>圈层经营 × 时间复利</b>"的生意——前 18 个月不要追求规模，而是把头部 80–150 位客户做深做透；只要熬过冷启动期，就能依靠低密度、稳定的高净值客流形成"<b>本地小而美的恒久符号</b>"。但若客群基础测算偏弱、关键人才无法落位、或合规预审存在硬约束，应果断暂缓而非强行推进。</p>
+
+  <h1 class="section-title">90 天关键动作清单</h1>
+  <table class="t">
+    <colgroup>
+      <col style="width:8%"><col style="width:52%"><col style="width:22%"><col style="width:18%">
+    </colgroup>
+    <thead>
+      <tr><th>编号</th><th>动作</th><th>责任方</th><th>截止</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag center">01</td>
+          <td>完成 80–100 名潜在种子会员的 1:1 访谈，验证产品 / 价格 / 圈层假设；这是项目"立项 / 暂缓"的最重要决策依据。</td>
+          <td class="center">项目方</td>
+          <td class="center">45 天内</td></tr>
+      <tr><td class="tag center">02</td>
+          <td>与 2 家头部雪茄代理商初步接洽，锁定供应渠道与年度配额意向。</td>
+          <td class="center">项目方 + 顾问</td>
+          <td class="center">30 天内</td></tr>
+      <tr><td class="tag center">03</td>
+          <td>启动一二线资深雪茄顾问意向沟通，明确驻场或半驻场可行性。</td>
+          <td class="center">HR 顾问</td>
+          <td class="center">45 天内</td></tr>
+      <tr><td class="tag center">04</td>
+          <td>完成 3–5 个候选物业实地踏勘与租金谈判，重点覆盖头部酒店配套与 CBD 裙房，形成短名单。</td>
+          <td class="center">项目方</td>
+          <td class="center">60 天内</td></tr>
+      <tr><td class="tag center">05</td>
+          <td>就候选物业开展烟草、消防、卫健合规预审。</td>
+          <td class="center">合规顾问</td>
+          <td class="center">75 天内</td></tr>
+      <tr><td class="tag center">06</td>
+          <td>完成品牌命名、VI 设计与官方账号矩阵搭建。</td>
+          <td class="center">品牌顾问</td>
+          <td class="center">75 天内</td></tr>
+      <tr><td class="tag center">07</td>
+          <td>完成正式商业计划书与第一轮预算冻结，启动装修招标。</td>
+          <td class="center">项目方 + 顾问</td>
+          <td class="center">90 天内</td></tr>
+    </tbody>
+  </table>
+  <div class="caption">表 12.1 · 推进项目所需的 90 天关键动作</div>
+
+  <div class="callout">
+    "海风、港灯、品鉴室里的烟雾——把它们做成本地圈层熟悉、外地客人惊喜的'港城客厅'，让一座小城也能拥有自己的雪茄符号。"
+  </div>
+
+  <div class="end-mark">— 报 告 完 —</div>
+
+  <div class="footer-bar">
+    <span>© 2026 钛耀咨询 · 机密</span>
+    <span>沿海三四线雪茄吧 · 可行性研究</span>
+    <span>第 15 页</span>
+  </div>
+</section>
+
+</body>
+</html>
